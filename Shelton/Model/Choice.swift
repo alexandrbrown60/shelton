@@ -9,9 +9,9 @@ import Foundation
 
 struct Choice {
     let text: String
-    let path: [Int]
+    let path: KeyValuePairs<Int, Bool>
     
-    init(text: String, path: [Int]) {
+    init(text: String, path: KeyValuePairs<Int, Bool>) {
         self.text = text
         self.path = path
     }

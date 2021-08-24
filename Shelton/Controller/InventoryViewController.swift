@@ -9,7 +9,19 @@ import UIKit
 
 class InventoryViewController: UIViewController {
     
+    @IBOutlet weak var health: UILabel!
+    @IBOutlet weak var attack: UILabel!
+    @IBOutlet weak var luck: UILabel!
+    @IBOutlet weak var gold: UILabel!
+    @IBOutlet weak var food: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        health.text = "❤️ Здоровье - \(Hero.health)"
+        attack.text = "⚔️ Сила - \(Hero.attackStrenght)"
+        luck.text = "🍀 Удача - \(Hero.luck)"
+        gold.text = "💰 Золото - \(Pocket.gold)"
+        food.text = "🍗 Еда - \(Pocket.food)"
     }
 }
