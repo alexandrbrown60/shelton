@@ -7,13 +7,14 @@
 
 class Hero {
     let dice: [Int] = Array(1...6)
-    var health: Int = 0
-    var attackStrenght: Int = 0
-    var luck: Int = 0
-    
-    func start() {
-        health = dice.randomElement()! + 12
-        attackStrenght = dice.randomElement()! + dice.randomElement()! + 6
-        luck = dice.randomElement()! + 6
+    var health: Int {
+        return dice.randomElement()! + 12
     }
+    var attackStrenght: Int {
+        return dice.randomElement()! + dice.randomElement()! + 6
+    }
+    var luck: Int {
+        return dice.randomElement()! + 6
+    }
+    
 }

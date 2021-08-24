@@ -25,6 +25,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNY-NP-IXB">
                                                 <rect key="frame" x="0.0" y="0.0" width="77" height="30"/>
                                                 <state key="normal" title="Инвентарь"/>
+                                                <connections>
+                                                    <segue destination="C7g-Rt-rka" kind="show" id="fZw-Bj-3bx"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGk-Rc-pQt">
                                                 <rect key="frame" x="0.0" y="50" width="41.333333333333336" height="20.333333333333329"/>
@@ -32,7 +35,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u9M-jL-IOA">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u9M-jL-IOA">
                                                 <rect key="frame" x="0.0" y="90.333333333333343" width="374" height="50"/>
                                             </stackView>
                                         </subviews>
@@ -70,6 +73,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="115.17857142857142"/>
+        </scene>
+        <!--Inventory View Controller-->
+        <scene sceneID="16B-2N-F56">
+            <objects>
+                <viewController id="C7g-Rt-rka" customClass="InventoryViewController" customModule="Shelton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7SH-kA-rd0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cbU-G2-3qj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rI6-w0-BAJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ang-rW-q6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952" y="115"/>
         </scene>
     </scenes>
     <resources>

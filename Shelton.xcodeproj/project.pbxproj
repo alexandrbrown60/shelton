@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F471BCE26AFFE62005C6528 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BCD26AFFE62005C6528 /* Enemy.swift */; };
 		1F471BD026B002A9005C6528 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BCF26B002A9005C6528 /* Hero.swift */; };
+		1FB7EC3D26D2571800D9C5E0 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7EC3C26D2571800D9C5E0 /* InventoryViewController.swift */; };
 		1FF86E0B26AEA832005A68BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E0A26AEA832005A68BE /* AppDelegate.swift */; };
 		1FF86E0D26AEA832005A68BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E0C26AEA832005A68BE /* SceneDelegate.swift */; };
 		1FF86E0F26AEA832005A68BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E0E26AEA832005A68BE /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		1F471BCD26AFFE62005C6528 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		1F471BCF26B002A9005C6528 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		1FB7EC3C26D2571800D9C5E0 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		1FF86E0726AEA832005A68BE /* Shelton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shelton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF86E0A26AEA832005A68BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF86E0C26AEA832005A68BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				1FF86E0E26AEA832005A68BE /* ViewController.swift */,
+				1FB7EC3C26D2571800D9C5E0 /* InventoryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				1F471BCE26AFFE62005C6528 /* Enemy.swift in Sources */,
 				1FF86E0F26AEA832005A68BE /* ViewController.swift in Sources */,
 				1F471BD026B002A9005C6528 /* Hero.swift in Sources */,
+				1FB7EC3D26D2571800D9C5E0 /* InventoryViewController.swift in Sources */,
 				1FF86E0B26AEA832005A68BE /* AppDelegate.swift in Sources */,
 				1FF86E0D26AEA832005A68BE /* SceneDelegate.swift in Sources */,
 			);
