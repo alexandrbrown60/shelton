@@ -8,8 +8,8 @@
 import UIKit
 
 struct StoryBrain {
-    var pathNumber = 0
-    let path = [
+    var pathNumber: Int
+    let path: [Choice] = [
         Choice(text: """
             Странные вещи стали твориться в последнее время в тихом портовом городке Грейкейп. Сначала в его
             гавань перестали заходить корабли, обычно пополнявшие там запасы пищи и пресной воды. Потом перестали
@@ -33,7 +33,7 @@ struct StoryBrain {
             совет, но зато горя знать не будете". Штурман уже возвращается с полными кружками, так что вам надо, не
             теряя времени, решить, что будете делать: заплатите ему 5 золотых и выйдете с ним в море (151), послушаетесь
             совета и пойдете нанимать капитана (230) или отклоните оба предложения (83).
-            """, path: [151: Pocket.checkForGold(5), 230: Pocket.checkForGold(10), 83: true]),
+            """, path: [151: true, 230: true, 83: true]),
         Choice(text: """
             Навстречу вам плывет небольшая яркая рыбка, в которой вы узнаете Солнечную рыбку. Кажется, она
             не представляет никакой опасности, но кто знает, что на самом деле опасно, а что нет в этом таинственном и
@@ -77,6 +77,10 @@ struct StoryBrain {
         //Battle - 11
         Choice(text: """
             Вы атакуете растение-хищника, и его щупальца обвиваются вокруг ваших ног и запястий, жаля неизвестным ядом. За каждый проигранный раунд атаки вы будете терять не 2, как обычно, а 4 ВЫНОСЛИВОСТИ.
+            
+            Растение-убийца
+            Мастерство - 8, Выносливость - 2
+            
             Если вам удалось сразить его, то 615. Если вы решили покинуть поле боя, то 184.
             """, path: [615: false, 184: true]),
         Choice(text: """
@@ -101,6 +105,10 @@ struct StoryBrain {
             Тело врага покрыто чешуей, поэтому поразить его будет не так легко. Каждый раз, когда вы бросаете
             кубики за себя и на обоих выпадает одно и то же число, считайте, что чешуя отразила ваш удар, независимо от
             исхода раунда атаки.
+            
+            Морской дракончик
+            Мастерство - 9, Выносливость - 8
+            
             Если вы убили его, то 419.
             """, path: [419: false]),
         Choice(text: """
@@ -171,7 +179,7 @@ struct StoryBrain {
             пригодится, и вы берете его с собой. К счастью, у вас сохранились все деньги да еще немного еды (на 2 раза).
             Вам повезло — могло быть гораздо хуже. Теперь начинайте подводное путешествие — 523.
             """, path: [523: true]),
-        //Future path
+        //Future path ???
         Choice(text: """
             Вы проплываете через картину, ничего не почувствовав и не поняв тайны загадочного видения. Но если впоследствии вас о ней спросят, прибавьте 86 к номеру параграфа, на котором будете находиться, и станет
             ясно, правильным ли был выбор.
@@ -202,6 +210,13 @@ struct StoryBrain {
         //Battle - 29
         Choice(text: """
             Рыба-еж отважно вступает в бой с пятнистой акулой, бой не на жизнь, а на смерть.
+            
+            Рыба-еж
+            Мастерство - 7, Выносливость - 12
+            
+            Пятнистая акула
+            Мастерство - 10, Выносливость - 10
+            
             Если Рыба-еж победила, то 448. Если же она мертва, придется вступить в бой с акулой самому — 268.
             """, path: [448: false, 268: false]),
         Choice(text: """
@@ -215,15 +230,22 @@ struct StoryBrain {
         Choice(text: """
             Проходит полчаса, никто на вас не покушается, и даже удается немного расслабиться. Неожиданно
             сильная струя воды ударяет вам в голову немного выше глаза. Чуть ниже— и вы Могли бы ослепнуть. Это
-            Брызгун, настроенный весьма воинственно. Приходится принять вызов. Если вы убили его, то 326.
+            Брызгун, настроенный весьма воинственно. Приходится принять вызов.
+            
+            Брызгун
+            Мастерство - 8, Выносливость - 9
+            
+            Если вы убили его, то 326.
             """, path: [326: false]),
         //Battle - 33
         Choice(text: """
             Прежде чем вы успеваете решить, куда двигаться дальше Джон устремляется по направлению к силуэту. Акула, а эта была она, резко разворачивается в атакует вашего неосторожного спутника раньше, чем он
-            успевает опомниться. Его голова исчезает в пасти хищника... Через .несколько секунд все кончено. Теперь в
-            бой с акулой надо вступать самому.
-            Если вы уменьшили ВЫНОСЛИВОСТЬ своего противника до 8, то 406. Если же акула сделала то же
-            самое, то 362.
+            успевает опомниться. Его голова исчезает в пасти хищника... Через .несколько секунд все кончено. Теперь в бой с акулой надо вступать самому.
+            
+            Акула
+            Мастерство - 10, Выносливость - 16
+            
+            Если вы уменьшили ВЫНОСЛИВОСТЬ своего противника до 8, то 406. Если же акула сделала то же самое, то 362.
             """, path: [406: false, 362: false]),
         Choice(text: """
             Вы плывете дальше по коридору, но внезапно за спиной слышится какой-то грохот. Это с потолка упала толстая металлическая решетка, отрезав путь назад. Теперь уж выбора не осталось: можно двигаться только
@@ -246,8 +268,7 @@ struct StoryBrain {
             о помощи, но в ответ слышите только загадочную фразу: "Всему свое время, и, если бы ты пришел ко мне
             раньше, я смог бы помочь. Теперь же слишком поздно. Иди, и да помогут тебе боги!"
             Не совсем понятно, что он имеет в виду, как и куда в другое время вы могли прийти к нему. Но делать
-            нечего, тем более что король уже сделал знак рукой, и перед вами вновь пустынный пляж. Приходится поки-
-            нуть остров ни с чем, проведя на нем ровно полчаса, — 540.
+            нечего, тем более что король уже сделал знак рукой, и перед вами вновь пустынный пляж. Приходится покинуть остров ни с чем, проведя на нем ровно полчаса, — 540.
             """, path: [540: true]),
         Choice(text: """
             Ваш противник мертв: можете взять с собой его трезубец. После этого с удвоенной осторожностью
@@ -373,6 +394,21 @@ struct StoryBrain {
         //Battle - 60
         Choice(text: """
             Во время битвы разбиваетесь на две группы.
+            
+            Капитан
+            Мастерство - 10, Выносливость - 14
+            
+            Первый пират
+            Мастерство - 10, Выносливость - 8
+            
+            С вами сражаются:
+            
+            Второй пират
+            Мастерство - 9, Выносливость - 8
+            
+            Третий пират
+            Мастерство - 10, Выносливость - 8
+            
             Если в первой группе победил капитан, а оба ваши противника еще живы, то 140, если они мертвы, —
             488, если же остался только один, — 334.
             В том случае, когда вы убили обоих пиратов, а капитан своего еще нет, — можете ему помочь. Как кидать кубики, решайте сами. Можете, чтобы не запутаться, сначала за первую, потом — за вторую группу, можете поочередно. Если все враги мертвы, а капитан пал в бою, то 198.
@@ -2341,8 +2377,11 @@ struct StoryBrain {
             """, path: [94: true]),
         //Battle 427
         Choice(text: """
+            Рыцарь-водяной:
+            Мастерство - 8, Выносливость - 8
+            
             Если убили его, то 38.
-            """, path: [38: true]),
+            """, path: [38: false]),
         Choice(text: """
             Кидаете в воду 1 еду, но Дух течения только смеется. Он свистит, и на свист приплывает стайка маленьких рыбок, которые в одно мгновение съедают брошенную еду. Но путь дальше свободен — шаловливый
             Дух исчезает — 549.
@@ -2948,10 +2987,13 @@ struct StoryBrain {
             """, path: [436: true, 620: true]),
         //Battle 545
         Choice(text: """
-            Проплываете через картину, но ничего не чувствуете, кроме разве что легкого колебания воды. Но внезапно картинная галерея, а вместе с ней и пещера исчезают, вы оказываетесь в открытом море и вдруг видите
-            на дне те самые сундуки, которые только что были на картине. Но их охраняют. На вас бросаются две Барракуды, и приходится принять бой. Сражаться с ними придется одновременно.
+            Проплываете через картину, но ничего не чувствуете, кроме разве что легкого колебания воды. Но внезапно картинная галерея, а вместе с ней и пещера исчезают, вы оказываетесь в открытом море и вдруг видите на дне те самые сундуки, которые только что были на картине. Но их охраняют. На вас бросаются две Барракуды, и приходится принять бой. Сражаться с ними придется одновременно.
+            
+            Барракуда
+            Мастерство - 11, Выносливость - 15
+            
             Если остались живы, а свирепые рыбы повержены, то 277.
-            """, path: [277: true]),
+            """, path: [277: false]),
         Choice(text: """
             Вы смотрите вниз и видите огромную устрицу, пристроившуюся в небольшой ложбине. Не мешало бы
             перекусить и восстановить силы, но вы замечаете какое-то неясное шевеление на морском дне неподалеку от
@@ -3372,22 +3414,37 @@ struct StoryBrain {
             """, path: [1: true]),
         Choice(text: """
             Хотите начать сначала?
-            """, path: [1: true])
+            """, path: [0: true])
         
     ]
     
-    func getPath() -> String {
+    var currentBattle: Battle?
+    
+    init(pathNumber: Int) {
+        self.pathNumber = pathNumber
+    }
+
+//MARK: - Functions
+    func getPathText() -> String {
         return path[pathNumber].text
     }
     
-    func getButton() -> [UIButton] {
+    func getPathButtons() -> [UIButton] {
         var buttonsArray: [UIButton] = []
         let pathChoices = path[pathNumber].path
         pathChoices.forEach { (key: Int, value: Bool) in
             let button = UIButton()
             button.setTitle(String(key), for: .normal)
-            button.backgroundColor = UIColor.blue
             button.translatesAutoresizingMaskIntoConstraints = false
+            if value {
+                button.backgroundColor = UIColor.blue
+                button.isEnabled = true
+            }
+            else {
+                button.backgroundColor = UIColor.gray
+                button.isEnabled = false
+            }
+            button.addTarget(self, action: #selector(ViewController.buttonPressed), for: .touchUpInside)
             buttonsArray.append(button)
         }
         
@@ -3400,15 +3457,73 @@ struct StoryBrain {
         
         if userChoice == "1" {
             self.pathNumber += 1
-            mainText.text = getPath()
+            mainText.text = getPathText()
         }
         else {
             self.pathNumber = Int(userChoice)! - 1
-            mainText.text = getPath()
+            mainText.text = getPathText()
+            checkForAction(self.pathNumber, stackView)
         }
         
-        
+        //add buttons and place it into stack view
+        let buttons: [UIButton] = getPathButtons()
+        buttons.forEach {
+            stackView.addArrangedSubview($0)
+        }
+                
+    }
+    
+    //Check if path requires any actions
+    mutating func checkForAction(_ pathNumber: Int, _ stackView: UIStackView) {
+        switch pathNumber {
+        case 10:
+            stackView.addArrangedSubview(AddGoToBattleButton())
+            self.currentBattle = Battle(enemys: [NPC(name: "Растение-убийца", health: 2, attackStrenght: 8)], allies: nil)
+        case 14:
+            stackView.addArrangedSubview(AddGoToBattleButton())
+            self.currentBattle = Battle(enemys: [NPC(name: "Морской дракончик", health: 8, attackStrenght: 9)], allies: nil)
+        case 22:
+            let silverDish = Item(name: "Серебряное блюдо", description: "Не блестит, а сверкает", isWeapon: false, action: 67)
+            Pocket.pickItem(item: silverDish)
+        case 28:
+            stackView.addArrangedSubview(AddGoToBattleButton())
+            self.currentBattle = Battle(enemys: [NPC(name: "Пятнистая акула", health: 10, attackStrenght: 10)], allies: [NPC(name: "Рыба-еж", health: 12, attackStrenght: 7)])
+        case 31:
+            stackView.addArrangedSubview(AddGoToBattleButton())
+            self.currentBattle = Battle(enemys: [NPC(name: "Брызгун", health: 9, attackStrenght: 8)], allies: nil)
+        case 32:
+            stackView.addArrangedSubview(AddGoToBattleButton())
+            self.currentBattle = Battle(enemys: [NPC(name: "Акула", health: 16, attackStrenght: 10)], allies: nil)
+        case 59:
+            stackView.addArrangedSubview(AddGoToBattleButton())
+            self.currentBattle = Battle(enemys: [NPC(name: "Первый пират", health: 8, attackStrenght: 10), NPC(name: "Второй пират", health: 8, attackStrenght: 9), NPC(name: "Третий пират", health: 8, attackStrenght: 10)], allies: [NPC(name: "Капитан", health: 14, attackStrenght: 10)])
+        case 150:
+            Pocket.gold -= 5
+        case 155:
+            Pocket.food -= 1
+        case 229:
+            Pocket.gold -= 10
+        case 426:
+            stackView.addArrangedSubview(AddGoToBattleButton())
+            self.currentBattle = Battle(enemys: [NPC(name: "Рыцарь-водяной", health: 8, attackStrenght: 8)], allies: nil)
+        default:
+            break
+        }
+            
+    }
+    
+    
+    func AddGoToBattleButton() -> UIButton {
+        let button = UIButton()
+        button.setTitle("Начать битву", for: .normal)
+        button.backgroundColor = UIColor.blue
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(ViewController.goToArena), for: .touchUpInside)
+        return button
+    }
+    
+    func getCurrentBattle() -> Battle {
+        return currentBattle!
     }
 
-    
 }

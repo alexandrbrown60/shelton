@@ -10,11 +10,11 @@ import Foundation
 class Pocket: Hero {
     static var gold: Int = 15
     static var food: Int = 0
-    var pocket: [Item] = []
+    static var pocket: [Item] = []
     
-    func pickItem(item: Item) {
-        if pocket.count < 6 {
-            pocket.append(item)
+    static func pickItem(item: Item) {
+        if Pocket.pocket.count < 6 {
+            Pocket.pocket.append(item)
         }
     }
     
@@ -24,11 +24,7 @@ class Pocket: Hero {
         }
         return false
     }
-    
-    func gold(_ gold: Int) {
-        Pocket.gold -= gold
-    }
-    
+        
     static func checkForFood(_ food: Int) -> Bool {
         if food <= Pocket.food {
             return true

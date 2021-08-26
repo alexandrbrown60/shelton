@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Enemy {
+struct NPC {
     let name: String
     var health: Int
     let attackStrenght: Int
