@@ -18,12 +18,10 @@ class ViewController: UIViewController, getDataFromArena {
     @IBOutlet weak var scrollView: UIScrollView!
     
     //variables and constants
-    let arenaViewController = ArenaViewController()
     var story = StoryBrain(pathNumber: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        arenaViewController.delegate = self
         
         //add first text and button
         mainText.text = story.getPathText()
@@ -53,12 +51,15 @@ class ViewController: UIViewController, getDataFromArena {
         if segue.identifier == "goToArena" {
             let destinationVC = segue.destination as! ArenaViewController
             destinationVC.battle = story.getCurrentBattle()
-
+            destinationVC.delegate = self
         }
     }
     
     func getData(data: Bool) {
-        print("Битва завершена")
+        if data {
+            let warButton = buttonStackView.arrangedSubviews[0]
+            warButton.isHidden = true
+        }
     }
 
 }

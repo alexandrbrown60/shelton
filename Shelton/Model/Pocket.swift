@@ -31,4 +31,19 @@ class Pocket: Hero {
         }
         return false
     }
+    
+    static func checkForItem(_ item: Item) -> Bool {
+        if Pocket.pocket.contains(item) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    static func removeItem(item: Item) {
+        if let index = Pocket.pocket.firstIndex(of: item) {
+            Pocket.pocket.remove(at: index)
+        }
+    }
+    
 }

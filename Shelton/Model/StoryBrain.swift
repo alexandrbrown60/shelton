@@ -423,6 +423,12 @@ struct StoryBrain {
             """, path: [402: true]),
         //Battle - 63
         Choice(text: """
+            Первый воин
+            Мастерство - 10, Выносливость - 10
+            
+            Второй воин
+            Мастерство - 10, Выносливость - 10
+            
             Если вы убили их, то 217.
             """, path: [217: false]),
         Choice(text: """
@@ -438,7 +444,23 @@ struct StoryBrain {
             """, path: [214: true]),
         //Battle - 66
         Choice(text: """
-            Вы призываете на помощь Носорога. Если хотите помочь ему, то 148, иначе он будет драться с пиратами в одиночку. Если ваш союзник перебил всех пиратов, то он исчезает (198), если же нет, сражаться с ними дальше
+            Вы призываете на помощь Носорога.
+            
+            Носорог
+            Мастерство - 10, Выносливость - 8
+            
+            Если хотите помочь ему, то 148, иначе он будет драться с пиратами в одиночку.
+            
+            Первый пират
+            Мастерство - 10, Выносливость - 8
+            
+            Второй пират
+            Мастерство - 9, Выносливость - 8
+            
+            Третий пират
+            Мастерство - 10, Выносливость - 8
+            
+            Если ваш союзник перебил всех пиратов, то он исчезает (198), если же нет, сражаться с ними дальше
             придется вам (583).
             """, path: [148: true, 198: false, 583: false]),
         //Map??
@@ -475,8 +497,13 @@ struct StoryBrain {
         //Battle - 71
         Choice(text: """
             В маленькой комнатке, в которую вплываете, вас ждет такой же Рыцарь-водяной, как и те, с которыми
-            только что сражались. Поскольку комнатка далеко от сокровищницы, он ничего не слышал. Рыцарь направляется навстречу и просит показать пропуск. Если с вами золотой щит, то 616. Если же нет, то придется драться. Если убили его, то 422.
-            """, path: [616: false, 422: false]),
+            только что сражались. Поскольку комнатка далеко от сокровищницы, он ничего не слышал. Рыцарь направляется навстречу и просит показать пропуск. Если с вами золотой щит, то 616.
+            
+            Рыцарь-водяной
+            Мастерство - 9, Выносливость - 12
+            
+            Если же нет, то придется драться. Если убили его, то 422.
+            """, path: [616: Pocket.checkForItem(K.Items.goldenShield), 422: false]),
         //Dice
         Choice(text: """
             ПРОВЕРЬТЕ СВОЮ УДАЧУ. Если удачливы, то 256, если же нет — 383.
@@ -485,6 +512,11 @@ struct StoryBrain {
         Choice(text: """
             Крылатый лев без промедления возникает в воздухе. Кондор атакует его и не дает опуститься на землю. Только теперь понимаете, насколько неудачен был ваш выбор. Птица молнией бросается на неповоротливого льва, стараясь выклевать глаза. Лев торопится достичь твердой почвы, но Кондор залетает под него, с трудом уворачиваясь от когтей, и клюет его в брюхо. Вскоре Кондору все же удается выклевать оба глаза вашего
             союзника — и лев падает на землю. Он мертв. Тогда вперед выступаете вы.
+            
+            Кондор
+            Мастерство - 9, Выносливость - 9
+            
+            Если вам удалось отомстить, то 429.
             """, path: [429: false]),
         Choice(text: """
             Вы надеваете браслет на руку. Но что это? Он начинает все сильнее и сильнее стискивать запястье.
@@ -1180,7 +1212,7 @@ struct StoryBrain {
         Choice(text: """
             Однако все дальнейшие разговоры ни к чему не приводят. Карлик пришел в хорошее настроение от
             удачной сделки, ну ему больше нечего предложить. Если у вас есть золотой перстень, то 45, если же нет, остается только поблагодарить это странное существо и распрощаться с ним — 501.
-            """, path: [45: true, 501: true]),
+            """, path: [45: Pocket.checkForItem(K.Items.goldenRing), 501: true]),
         Choice(text: """
             Все-таки вы моряк, а не наездник, и Морской конек без особого труда сбрасывает вас (потеряйте 2
             ВЫНОСЛИВОСТИ). После нескольких бесплодных попыток вы решаете оставить его в покое и отправиться
@@ -1265,7 +1297,7 @@ struct StoryBrain {
             спинами своих приспешников, вы не опуститесь столь же низко.
             Его огромный меч со свистом рассекает воздух, и битва будет нелегкой. Если у вас есть амулет, то 331.
             Если же нет, но вам удалось уменьшить выносливость врага до 12, то 150.
-            """, path: [331: true, 150: true]),
+            """, path: [331: Pocket.checkForItem(K.Items.amulet), 150: true]),
         //Battle 218
         Choice(text: """
             Вы зовете воина Принца, и тот тут же появляется.
@@ -1404,7 +1436,7 @@ struct StoryBrain {
         Choice(text: """
             Вдруг из-за ближайшего дерева выплывает Рыба-собака. Ее кожа покрыта мелкими костными пластинками, образующими некое подобие панциря. Она немедленно ощеривается, готовая к бою. Сразитесь с ней
             (389) или попробуете приручить, накормив (если, конечно, у вас есть чем) (12)?
-            """, path: [389: true, 12: true]),
+            """, path: [389: true, 12: Pocket.checkForFood(1)]),
         Choice(text: """
             Не успели далеко уплыть, как замечаете на дне какой-то неясный блеск. Приглядевшись, видите что-то
             очень похожее на сосуд, наполовину занесенный песком. Хотите спуститься и посмотреть, что это (371), или
@@ -1440,7 +1472,7 @@ struct StoryBrain {
         Choice(text: """
             Но куда же попросить отвезти вас, ведь в подводном царстве вы впервые. Ничего определенного указать ему не можете, значит, надо сказать так, чтобы он сам понял, куда вы хотите попасть. Старик говорит, что
             за перевоз он берет 2 золотых. Так куда же вы попросите себя доставить: к сокровищам (542), за добрым советом (415), к тому, кто топит корабли (114), или откажетесь от его услуг (365)? А может быть, лучше убить старика и самому воспользоваться лодкой (88)?
-            """, path: [542: true, 415: true, 114: true, 365: true, 88: true]),
+            """, path: [542: Pocket.checkForGold(2), 415: Pocket.checkForGold(2), 114: Pocket.checkForGold(2), 365: true, 88: true]),
         //Battle 248
         Choice(text: """
             Вы выходите на каменистую отмель острова, и сразу же вас подстерегает опасность. Свои владения от
@@ -1741,7 +1773,7 @@ struct StoryBrain {
             предложить серебряное блюдо (124), золотой перстень (45) или сушеного краба (627). Иначе оскорбленный
             Карлик не станет больше с вами разговаривать, и останется только отправиться дальше несолоно хлебавши
             (501)
-            """, path: [124: true, 45: true, 627: true, 501: true]),
+            """, path: [124: Pocket.checkForItem(K.Items.silverDish), 45: Pocket.checkForItem(K.Items.goldenRing), 627: Pocket.checkForItem(K.Items.driedCrab), 501: true]),
         Choice(text: """
             Прямо перед вами на дне впадины видны два окованных железом сундука. Вряд ли это клад — иначе
             бы их надежно спрятали. Скорее всего это остатки груза какого-то корабля, потерпевшего крушение давнымдавно. Спуститесь во впадину и подплывете к сундукам (565) или предпочтете обогнуть ее и направиться к
@@ -2568,7 +2600,7 @@ struct StoryBrain {
             прибавьте 15 к номеру параграфа, на котором будете находиться. После этого ведьма интересуется, нет ли у вас
             случайно сушеного краба. Вы удивлены как переменой темы разговора, так и самим вопросом, но стараетесь не
             подать виду. Если у вас есть сушеный краб и вы хотите отдать его ведьме, то 471, если же нет, останется топысо распрощаться с хозяйкой и покинуть комнату — 321.
-            """, path: [471: true, 321: true]),
+            """, path: [471: Pocket.checkForItem(K.Items.driedCrab), 321: true]),
         Choice(text: """
             На какой остров из тех, где вы еще не были, направитесь теперь? На первый (248), второй (16), третий
             (233), четвертый (165), пятый (418), седьмой (535), восьмой (100), девятый (84), десятый (352), одиннадцатый
@@ -2606,7 +2638,7 @@ struct StoryBrain {
             себе многих других. Живут они на острове, а добраться до этого острова трудно, почти невозможно. Однако
             магия может помочь и здесь. Ведьма спрашивает, есть ли у вас обруч с рубином. Если скажете, что да, — 79,
             если ответите, что нет, — 349.
-            """, path: [79: true, 349: true]),
+            """, path: [79: Pocket.checkForItem(K.Items.rubyHoop), 349: true]),
         Choice(text: """
             Далеко впереди видны пузырьки воздуха, поднимающиеся со дна. Хотите посмотреть, что это такое
             (586), или поплывете в другую сторону (423)?
@@ -3323,7 +3355,7 @@ struct StoryBrain {
             тогда сушеного краба? " — к немалому вашему удивлению интересуется ведьма. Если он есть и его не жалко
             отдать старухе, то 471. Если же нет, то не остается ничего другого, как попрощаться и уплыть из комнаты, —
             321.
-            """, path: [471: true, 321: true]),
+            """, path: [471: Pocket.checkForItem(K.Items.driedCrab), 321: true]),
         Choice(text: """
             В конце концов растение срублено, и длинный блестящий предмет — у вас в руках. Это гарпун, который можно взять с собой. Если надумаете его использовать (а сделать это можно только один раз), то тем самым сразу же отнимете у противника 12 ВЫНОСЛИВОСТЕЙ (однако учтите: пользоваться им можно только
             под водой, на суше ои бесполезен). Теперь можете отправляться дальше — 168.
@@ -3477,41 +3509,318 @@ struct StoryBrain {
     mutating func checkForAction(_ pathNumber: Int, _ stackView: UIStackView) {
         switch pathNumber {
         case 10:
-            stackView.addArrangedSubview(AddGoToBattleButton())
-            self.currentBattle = Battle(enemys: [NPC(name: "Растение-убийца", health: 2, attackStrenght: 8)], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.plantKiller], allies: nil)
         case 14:
-            stackView.addArrangedSubview(AddGoToBattleButton())
-            self.currentBattle = Battle(enemys: [NPC(name: "Морской дракончик", health: 8, attackStrenght: 9)], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.seaDragon], allies: nil)
         case 22:
-            let silverDish = Item(name: "Серебряное блюдо", description: "Не блестит, а сверкает", isWeapon: false, action: 67)
-            Pocket.pickItem(item: silverDish)
+            Pocket.pickItem(item: K.Items.silverDish)
         case 28:
-            stackView.addArrangedSubview(AddGoToBattleButton())
-            self.currentBattle = Battle(enemys: [NPC(name: "Пятнистая акула", health: 10, attackStrenght: 10)], allies: [NPC(name: "Рыба-еж", health: 12, attackStrenght: 7)])
+            setBattle(stackView, enemys: [K.NPCs.spottedShark], allies: [K.NPCs.hedgehogFish])
         case 31:
-            stackView.addArrangedSubview(AddGoToBattleButton())
-            self.currentBattle = Battle(enemys: [NPC(name: "Брызгун", health: 9, attackStrenght: 8)], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.archer], allies: nil)
         case 32:
-            stackView.addArrangedSubview(AddGoToBattleButton())
-            self.currentBattle = Battle(enemys: [NPC(name: "Акула", health: 16, attackStrenght: 10)], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.shark], allies: nil)
+        case 50:
+            Pocket.gold -= 10
         case 59:
-            stackView.addArrangedSubview(AddGoToBattleButton())
-            self.currentBattle = Battle(enemys: [NPC(name: "Первый пират", health: 8, attackStrenght: 10), NPC(name: "Второй пират", health: 8, attackStrenght: 9), NPC(name: "Третий пират", health: 8, attackStrenght: 10)], allies: [NPC(name: "Капитан", health: 14, attackStrenght: 10)])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.captain])
+        case 62:
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: nil)
+        case 65:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.rhinoceros])
+        case 70:
+            setBattle(stackView, enemys: [K.NPCs.knightOfTheWater], allies: nil)
+        case 72:
+            setBattle(stackView, enemys: [K.NPCs.kondor], allies: nil)
+        case 73:
+            Hero.attackStrenght -= 1
+            Hero.health -= 2
+        case 75:
+            Hero.health += 4
+        case 78:
+            Pocket.removeItem(item: K.Items.rubyHoop)
+        case 79:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.sailor])
+        case 80:
+            Hero.luck += 1
+        case 85:
+            setBattle(stackView, enemys: [K.NPCs.octopus], allies: nil)
+        case 87:
+            setBattle(stackView, enemys: [K.NPCs.oldBoatman], allies: nil)
+        case 90:
+            Pocket.food -= 2
+        case 92:
+            Hero.health -= 4
+        case 99:
+            setBattle(stackView, enemys: [K.NPCs.griff], allies: nil)
+        case 112:
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.rhinoceros])
+        case 121:
+            Hero.health += 6
+        case 130:
+            setBattle(stackView, enemys: [K.NPCs.seaDeamon], allies: nil)
+        case 132:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.wingedLion])
+        case 136:
+            setBattle(stackView, enemys: [K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.knightOfTheWater])
+        case 139:
+            setBattle(stackView, enemys: [K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.captain])
+        case 145:
+            setBattle(stackView, enemys: [K.NPCs.giantCrab], allies: nil)
+        case 146:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.seaKnight])
+        case 147:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.rhinoceros])
+        case 148:
+            Hero.attackStrenght -= 2
+            setBattle(stackView, enemys: [K.NPCs.wingedLion], allies: nil)
         case 150:
             Pocket.gold -= 5
+        case 151:
+            Hero.health -= 2
+            setBattle(stackView, enemys: [K.NPCs.giantCrab], allies: nil)
+        case 154:
+            Hero.health -= 2
+            Hero.attackStrenght -= 1
+            setBattle(stackView, enemys: [K.NPCs.seaSnake], allies: nil)
         case 155:
             Pocket.food -= 1
+        case 158:
+            setBattle(stackView, enemys: [K.NPCs.shark], allies: nil)
+        case 161:
+            Hero.health -= 2
+        case 163:
+            Hero.health -= 1
+        case 165:
+            Hero.health += 6
+        case 169:
+            setBattle(stackView, enemys: [K.NPCs.fish], allies: nil)
+        case 170:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.warrior])
+        case 171:
+            Hero.luck -= 1
+        case 179:
+            setBattle(stackView, enemys: [K.NPCs.warrior], allies: [K.NPCs.wingedLion])
+        case 180:
+            setBattle(stackView, enemys: [K.NPCs.giantSqid], allies: nil)
+        case 184:
+            setBattle(stackView, enemys: [K.NPCs.firstMerman, K.NPCs.secondMerman], allies: nil)
+        case 185:
+            Hero.health += 5
+        case 191:
+            Pocket.gold += 2
+            Pocket.pickItem(item: K.Items.driedCrab)
+        case 193:
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.seaKnight])
+        case 195:
+            Pocket.pickItem(item: K.Items.dolphinStatuette)
+        case 202:
+            Hero.health -= 2
+        case 203:
+            Hero.health -= 2
+            setBattle(stackView, enemys: [K.NPCs.electricSkat], allies: nil)
+        case 210:
+            setBattle(stackView, enemys: [K.NPCs.grumblerFish], allies: nil)
+        case 216:
+            setBattle(stackView, enemys: [K.NPCs.giant], allies: nil)
+        case 217:
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.princeWarrior])
+        case 218:
+            Pocket.food += 1
+            Hero.health += 6
+        case 223:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.princeWarrior])
+        case 225:
+            setBattle(stackView, enemys: [K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.seaKnight])
         case 229:
-            Pocket.gold -= 10
+            Pocket.gold -= 1
+        case 237:
+            setBattle(stackView, enemys: [K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.wingedLion])
+        case 243:
+            setBattle(stackView, enemys: [K.NPCs.masterKnightOfTheWater, K.NPCs.firstKnightOfTheWater, K.NPCs.secondKnightOfTheWater], allies: nil)
+        case 247:
+            setBattle(stackView, enemys: [K.NPCs.rhinoceros], allies: nil)
+        case 261:
+            setBattle(stackView, enemys: [K.NPCs.kondor], allies: nil)
+        case 267:
+            setBattle(stackView, enemys: [K.NPCs.spottedShark], allies: nil)
+        case 284:
+            setBattle(stackView, enemys: [K.NPCs.seaDeamon], allies: nil)
+        case 292:
+            setBattle(stackView, enemys: [K.NPCs.dragon], allies: nil)
+        case 304:
+            Hero.health += 2
+        case 306:
+            Pocket.gold -= 2
+            Hero.attackStrenght += 1
+        case 312:
+            setBattle(stackView, enemys: [K.NPCs.merman], allies: nil)
+        case 318:
+            Hero.health += 10
+        case 328:
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: nil)
+        case 329:
+            setBattle(stackView, enemys: [K.NPCs.kondor], allies: [K.NPCs.griff, K.NPCs.owl])
+        case 332:
+            Hero.luck -= 1
+        case 336:
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.knightOfTheWater])
+        case 338:
+            setBattle(stackView, enemys: [K.NPCs.cookMerman], allies: nil)
+        case 349:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.sailor])
+        case 366:
+            Pocket.pickItem(item: K.Items.riderStatuette)
+        case 387:
+            setBattle(stackView, enemys: [K.NPCs.spottedShark], allies: nil)
+        case 388:
+            setBattle(stackView, enemys: [K.NPCs.dogFish], allies: nil)
+        case 396:
+            Hero.health -= 1
+            setBattle(stackView, enemys: [K.NPCs.seaSpider], allies: nil)
+        case 397:
+            setBattle(stackView, enemys: [K.NPCs.unicornFish], allies: nil)
+        case 407:
+            Hero.health -= 2
+        case 408:
+            setBattle(stackView, enemys: [K.NPCs.nobleMan], allies: nil)
+        case 410:
+            Hero.health -= 2
+        case 414:
+            Pocket.gold -= 2
+        case 419:
+            Hero.health += 6
+            Pocket.food += 1
+        case 423:
+            Hero.luck += 2
+        case 424:
+            setBattle(stackView, enemys: [K.NPCs.spottedShark], allies: [K.NPCs.hammerFish])
+        case 427:
+            Pocket.food -= 1
         case 426:
-            stackView.addArrangedSubview(AddGoToBattleButton())
-            self.currentBattle = Battle(enemys: [NPC(name: "Рыцарь-водяной", health: 8, attackStrenght: 8)], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.knightOfTheWater], allies: nil)
+        case 429:
+            setBattle(stackView, enemys: [K.NPCs.electricEel], allies: nil)
+        case 430:
+            Hero.luck -= 1
+        case 433:
+            Hero.health -= 4
+        case 442:
+            setBattle(stackView, enemys: [K.NPCs.firstKnightOfTheWater, K.NPCs.secondKnightOfTheWater, K.NPCs.thirdKnightOfTheWater], allies: nil)
+        case 444:
+            Hero.health -= 4
+        case 450:
+            setBattle(stackView, enemys: [K.NPCs.seaSpider], allies: nil)
+        case 451:
+            Pocket.gold -= 2
+            Pocket.pickItem(item: K.Items.swordFish)
+        case 457:
+            Pocket.pickItem(item: K.Items.owlFeather)
+            Pocket.removeItem(item: K.Items.swordFish)
+        case 462:
+            Hero.health -= 2
+        case 463:
+            Pocket.gold -= 10
+            Pocket.pickItem(item: K.Items.amulet)
+        case 465:
+            Pocket.pickItem(item: K.Items.bell)
+        case 467:
+            Pocket.food -= 2
+        case 469:
+            setBattle(stackView, enemys: [K.NPCs.kondor], allies: [K.NPCs.owl])
+        case 470:
+            Pocket.removeItem(item: K.Items.driedCrab)
+        case 479:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.knightOfTheWater])
+        case 484:
+            Pocket.gold += 10
+        case 485:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.captain])
+        case 493:
+            setBattle(stackView, enemys: [K.NPCs.kondor], allies: [K.NPCs.griff])
+        case 502:
+            Pocket.gold -= 2
+            Pocket.pickItem(item: K.Items.moonFish)
+        case 505:
+            Hero.health -= 5
+        case 506:
+            setBattle(stackView, enemys: [K.NPCs.hammerFish], allies: nil)
+        case 518:
+            setBattle(stackView, enemys: [K.NPCs.electricSkat], allies: nil)
+        case 532:
+            Hero.health -= 2
+            setBattle(stackView, enemys: [K.NPCs.firstKnightOfTheWater, K.NPCs.secondKnightOfTheWater], allies: nil)
+        case 533:
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.sailor])
+        case 538:
+            Hero.health -= 2
+            setBattle(stackView, enemys: [K.NPCs.seaNeedle], allies: nil)
+        case 540:
+            Pocket.gold += 2
+        case 542:
+            Hero.luck -= 1
+        case 550:
+            Pocket.pickItem(item: K.Items.horn)
+        case 552:
+            Pocket.gold += 10
+        case 559:
+            Hero.health += 3
+        case 563:
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.captain])
+        case 565:
+            setBattle(stackView, enemys: [K.NPCs.manEater], allies: nil)
+        case 573:
+            setBattle(stackView, enemys: [K.NPCs.wingedLion], allies: nil)
+        case 576:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.knightOfTheWater])
+        case 577:
+            Pocket.pickItem(item: K.Items.smoothPebble)
+        case 579:
+            Hero.health -= 1
+        case 581:
+            setBattle(stackView, enemys: [K.NPCs.shark], allies: nil)
+        case 582:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: nil)
+        case 583:
+            Pocket.pickItem(item: K.Items.sink)
+        case 589:
+            Pocket.gold += 2
+        case 594:
+            Hero.health += 3
+        case 596:
+            Pocket.pickItem(item: K.Items.crabClaw)
+        case 599:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.wingedLion])
+        case 604:
+            Pocket.pickItem(item: K.Items.rubyHoop)
+        case 605:
+            Pocket.removeItem(item: K.Items.amulet)
+        case 618:
+            Pocket.gold += 2
+            Pocket.food += 2
+        case 619:
+            Pocket.gold += 4
+            Pocket.luck += 1
+        case 623:
+            Hero.health -= 4
+        case 626:
+            Pocket.removeItem(item: K.Items.driedCrab)
+        case 627:
+            Hero.health += 4
+            Pocket.food += 1
         default:
             break
         }
             
     }
     
+    //MARK: - Battle Functions
+    
+    mutating func setBattle(_ stackView: UIStackView, enemys:[NPC], allies: [NPC]?) {
+        let button = AddGoToBattleButton()
+        stackView.addArrangedSubview(button)
+        self.currentBattle = Battle(enemys: enemys, allies: allies)
+    }
     
     func AddGoToBattleButton() -> UIButton {
         let button = UIButton()

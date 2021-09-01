@@ -13,6 +13,7 @@
 		1F471BD026B002A9005C6528 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BCF26B002A9005C6528 /* Hero.swift */; };
 		1F5A160626D6332400B7F4E7 /* ArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A160526D6332400B7F4E7 /* ArenaViewController.swift */; };
 		1F5A160A26D63BA300B7F4E7 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A160926D63BA300B7F4E7 /* Battle.swift */; };
+		1FB2794C26DE605D00CA0103 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2794B26DE605D00CA0103 /* Constants.swift */; };
 		1FB7EC3D26D2571800D9C5E0 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7EC3C26D2571800D9C5E0 /* InventoryViewController.swift */; };
 		1FF86E0B26AEA832005A68BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E0A26AEA832005A68BE /* AppDelegate.swift */; };
 		1FF86E0D26AEA832005A68BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E0C26AEA832005A68BE /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 		1F471BCF26B002A9005C6528 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		1F5A160526D6332400B7F4E7 /* ArenaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaViewController.swift; sourceTree = "<group>"; };
 		1F5A160926D63BA300B7F4E7 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
+		1FB2794B26DE605D00CA0103 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1FB7EC3C26D2571800D9C5E0 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		1FF86E0726AEA832005A68BE /* Shelton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shelton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF86E0A26AEA832005A68BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				1F44A27926D4F57000382E3F /* Pocket.swift */,
 				1F44A27B26D4F6CE00382E3F /* Item.swift */,
 				1F5A160926D63BA300B7F4E7 /* Battle.swift */,
+				1FB2794B26DE605D00CA0103 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				1FF86E0F26AEA832005A68BE /* ViewController.swift in Sources */,
 				1F471BD026B002A9005C6528 /* Hero.swift in Sources */,
 				1FB7EC3D26D2571800D9C5E0 /* InventoryViewController.swift in Sources */,
+				1FB2794C26DE605D00CA0103 /* Constants.swift in Sources */,
 				1F5A160626D6332400B7F4E7 /* ArenaViewController.swift in Sources */,
 				1F44A27A26D4F57000382E3F /* Pocket.swift in Sources */,
 				1FF86E0B26AEA832005A68BE /* AppDelegate.swift in Sources */,
