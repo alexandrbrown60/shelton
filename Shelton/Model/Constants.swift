@@ -28,6 +28,7 @@ struct K {
         static let smoothPebble = Item(name: "Гладкий камешек", description: "В море много гладких камней. Но этот какой-то особенный", isWeapon: false, action: 376)
         static let sink = Item(name: "Раковина", description: "Просто прекрасная раковина", isWeapon: false, action: 271)
         static let crabClaw = Item(name: "Клешня краба", description: "Странная вещь... Зачем вообще таскать это с собой?", isWeapon: false, action: -269)
+        static let trident = Item(name: "Трезубец", description: "Вполне пригодно для оружия", isWeapon: true, action: nil)
     }
     struct NPCs {
         static let plantKiller = NPC(name: "Растение-убийца", health: 2, attackStrenght: 8)

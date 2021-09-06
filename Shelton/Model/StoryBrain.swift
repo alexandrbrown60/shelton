@@ -3509,29 +3509,45 @@ struct StoryBrain {
     mutating func checkForAction(_ pathNumber: Int, _ stackView: UIStackView) {
         switch pathNumber {
         case 10:
-            setBattle(stackView, enemys: [K.NPCs.plantKiller], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.plantKiller], allies: nil, ifHeroWon: 615, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
+        case 13:
+            Hero.health -= 1
         case 14:
-            setBattle(stackView, enemys: [K.NPCs.seaDragon], allies: nil)
+            Hero.health -= 3
+            setBattle(stackView, enemys: [K.NPCs.seaDragon], allies: nil, ifHeroWon: 419, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
+        case 20:
+            Hero.health -= 1
+        case 21:
+            Pocket.gold += 2
         case 22:
             Pocket.pickItem(item: K.Items.silverDish)
         case 28:
-            setBattle(stackView, enemys: [K.NPCs.spottedShark], allies: [K.NPCs.hedgehogFish])
+            setBattle(stackView, enemys: [K.NPCs.spottedShark], allies: [K.NPCs.hedgehogFish], ifHeroWon: 448, ifEnemyWon: 268, ifAllyWon: nil, specialConditions: 0)
         case 31:
-            setBattle(stackView, enemys: [K.NPCs.archer], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.archer], allies: nil, ifHeroWon: 326, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 32:
-            setBattle(stackView, enemys: [K.NPCs.shark], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.shark], allies: nil, ifHeroWon: 406, ifEnemyWon: 362, ifAllyWon: nil, specialConditions: 8)
+        case 35:
+            Hero.health += 10
+        case 37:
+            Pocket.pickItem(item: K.Items.trident)
+        case 39:
+            Pocket.gold -= 2
         case 50:
             Pocket.gold -= 10
+        case 53:
+            Hero.health -= 2
+            Hero.attackStrenght -= 1
         case 59:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.captain])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.captain], ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: 488, specialConditions: 0)
         case 62:
-            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: nil, ifHeroWon: 217, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 65:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.rhinoceros])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.rhinoceros], ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 70:
-            setBattle(stackView, enemys: [K.NPCs.knightOfTheWater], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.knightOfTheWater], allies: nil, ifHeroWon: 422, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 72:
-            setBattle(stackView, enemys: [K.NPCs.kondor], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.kondor], allies: nil, ifHeroWon: 429, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 73:
             Hero.attackStrenght -= 1
             Hero.health -= 2
@@ -3540,53 +3556,53 @@ struct StoryBrain {
         case 78:
             Pocket.removeItem(item: K.Items.rubyHoop)
         case 79:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.sailor])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.sailor], ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 80:
             Hero.luck += 1
         case 85:
-            setBattle(stackView, enemys: [K.NPCs.octopus], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.octopus], allies: nil, ifHeroWon: 271, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 87:
-            setBattle(stackView, enemys: [K.NPCs.oldBoatman], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.oldBoatman], allies: nil, ifHeroWon: 192, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 90:
             Pocket.food -= 2
         case 92:
             Hero.health -= 4
         case 99:
-            setBattle(stackView, enemys: [K.NPCs.griff], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.griff], allies: nil, ifHeroWon: 555, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 112:
-            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.rhinoceros])
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.rhinoceros], ifHeroWon: 217, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 121:
             Hero.health += 6
         case 130:
-            setBattle(stackView, enemys: [K.NPCs.seaDeamon], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.seaDeamon], allies: nil, ifHeroWon: 472, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 132:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.wingedLion])
-        case 136:
-            setBattle(stackView, enemys: [K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.knightOfTheWater])
-        case 139:
-            setBattle(stackView, enemys: [K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.captain])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.wingedLion], ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
+//        case 136:
+//            setBattle(stackView, enemys: [K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.knightOfTheWater])
+//        case 139:
+//            setBattle(stackView, enemys: [K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.captain])
         case 145:
-            setBattle(stackView, enemys: [K.NPCs.giantCrab], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.giantCrab], allies: nil, ifHeroWon: 597, ifEnemyWon: 78, ifAllyWon: nil, specialConditions: 4)
         case 146:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.seaKnight])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.seaKnight], ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 147:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.rhinoceros])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.rhinoceros], ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 148:
             Hero.attackStrenght -= 2
-            setBattle(stackView, enemys: [K.NPCs.wingedLion], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.wingedLion], allies: nil, ifHeroWon: 324, ifEnemyWon: 630, ifAllyWon: 61, specialConditions: 0)
         case 150:
             Pocket.gold -= 5
         case 151:
             Hero.health -= 2
-            setBattle(stackView, enemys: [K.NPCs.giantCrab], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.chameleonFish], allies: nil, ifHeroWon: 53, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 154:
             Hero.health -= 2
             Hero.attackStrenght -= 1
-            setBattle(stackView, enemys: [K.NPCs.seaSnake], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.seaSnake], allies: nil, ifHeroWon: 355, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 155:
             Pocket.food -= 1
         case 158:
-            setBattle(stackView, enemys: [K.NPCs.shark], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.shark], allies: nil, ifHeroWon: 406, ifEnemyWon: 362, ifAllyWon: nil, specialConditions: 8)
         case 161:
             Hero.health -= 2
         case 163:
@@ -3594,96 +3610,98 @@ struct StoryBrain {
         case 165:
             Hero.health += 6
         case 169:
-            setBattle(stackView, enemys: [K.NPCs.fish], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.fish], allies: nil, ifHeroWon: 22, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 170:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.warrior])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.warrior], ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 171:
             Hero.luck -= 1
         case 179:
-            setBattle(stackView, enemys: [K.NPCs.warrior], allies: [K.NPCs.wingedLion])
+            setBattle(stackView, enemys: [K.NPCs.warrior], allies: [K.NPCs.wingedLion], ifHeroWon: 217, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 180:
-            setBattle(stackView, enemys: [K.NPCs.giantSqid], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.giantSqid], allies: nil, ifHeroWon: 541, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 184:
-            setBattle(stackView, enemys: [K.NPCs.firstMerman, K.NPCs.secondMerman], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.firstMerman, K.NPCs.secondMerman], allies: nil, ifHeroWon: 414, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 185:
             Hero.health += 5
         case 191:
             Pocket.gold += 2
             Pocket.pickItem(item: K.Items.driedCrab)
         case 193:
-            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.seaKnight])
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.seaKnight], ifHeroWon: 217, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 195:
             Pocket.pickItem(item: K.Items.dolphinStatuette)
         case 202:
             Hero.health -= 2
         case 203:
             Hero.health -= 2
-            setBattle(stackView, enemys: [K.NPCs.electricSkat], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.electricSkat], allies: nil, ifHeroWon: 473, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 210:
-            setBattle(stackView, enemys: [K.NPCs.grumblerFish], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.grumblerFish], allies: nil, ifHeroWon: 234, ifEnemyWon: 630, ifAllyWon: 48, specialConditions: 0)
         case 216:
-            setBattle(stackView, enemys: [K.NPCs.giant], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.giant], allies: nil, ifHeroWon: 150, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 12)
         case 217:
-            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.princeWarrior])
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.princeWarrior], ifHeroWon: 217, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 218:
             Pocket.food += 1
             Hero.health += 6
         case 223:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.princeWarrior])
-        case 225:
-            setBattle(stackView, enemys: [K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.seaKnight])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.princeWarrior], ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
+//        case 225:
+//            setBattle(stackView, enemys: [K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.seaKnight])
         case 229:
             Pocket.gold -= 1
-        case 237:
-            setBattle(stackView, enemys: [K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.wingedLion])
+//        case 237:
+//            setBattle(stackView, enemys: [K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.wingedLion])
         case 243:
-            setBattle(stackView, enemys: [K.NPCs.masterKnightOfTheWater, K.NPCs.firstKnightOfTheWater, K.NPCs.secondKnightOfTheWater], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.masterKnightOfTheWater, K.NPCs.firstKnightOfTheWater, K.NPCs.secondKnightOfTheWater], allies: nil, ifHeroWon: 414, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 247:
-            setBattle(stackView, enemys: [K.NPCs.rhinoceros], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.rhinoceros], allies: nil, ifHeroWon: 13, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 261:
-            setBattle(stackView, enemys: [K.NPCs.kondor], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.kondor], allies: nil, ifHeroWon: 429, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 267:
-            setBattle(stackView, enemys: [K.NPCs.spottedShark], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.spottedShark], allies: nil, ifHeroWon: 369, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
+        case 283:
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: nil, ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 284:
-            setBattle(stackView, enemys: [K.NPCs.seaDeamon], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.seaDeamon], allies: nil, ifHeroWon: 315, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 2)
         case 292:
-            setBattle(stackView, enemys: [K.NPCs.dragon], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.dragon], allies: nil, ifHeroWon: 476, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 304:
             Hero.health += 2
         case 306:
             Pocket.gold -= 2
             Hero.attackStrenght += 1
         case 312:
-            setBattle(stackView, enemys: [K.NPCs.merman], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.merman], allies: nil, ifHeroWon: 521, ifEnemyWon: 130, ifAllyWon: nil, specialConditions: 0)
         case 318:
             Hero.health += 10
         case 328:
-            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: nil, ifHeroWon: 217, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 329:
-            setBattle(stackView, enemys: [K.NPCs.kondor], allies: [K.NPCs.griff, K.NPCs.owl])
+            setBattle(stackView, enemys: [K.NPCs.kondor], allies: [K.NPCs.griff, K.NPCs.owl], ifHeroWon: 429, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 332:
             Hero.luck -= 1
         case 336:
-            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.knightOfTheWater])
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.knightOfTheWater], ifHeroWon: 217, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 338:
-            setBattle(stackView, enemys: [K.NPCs.cookMerman], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.cookMerman], allies: nil, ifHeroWon: 504, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 349:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.sailor])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.sailor], ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 366:
             Pocket.pickItem(item: K.Items.riderStatuette)
         case 387:
-            setBattle(stackView, enemys: [K.NPCs.spottedShark], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.spottedShark], allies: nil, ifHeroWon: 369, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 388:
-            setBattle(stackView, enemys: [K.NPCs.dogFish], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.dogFish], allies: nil, ifHeroWon: 360, ifEnemyWon: 630, ifAllyWon: 152, specialConditions: 0)
         case 396:
             Hero.health -= 1
-            setBattle(stackView, enemys: [K.NPCs.seaSpider], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.seaSpider], allies: nil, ifHeroWon: 36, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 397:
-            setBattle(stackView, enemys: [K.NPCs.unicornFish], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.unicornFish], allies: nil, ifHeroWon: 551, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 407:
             Hero.health -= 2
         case 408:
-            setBattle(stackView, enemys: [K.NPCs.nobleMan], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.nobleMan], allies: nil, ifHeroWon: 70, ifEnemyWon: 630, ifAllyWon: 380, specialConditions: 0)
         case 410:
             Hero.health -= 2
         case 414:
@@ -3694,23 +3712,23 @@ struct StoryBrain {
         case 423:
             Hero.luck += 2
         case 424:
-            setBattle(stackView, enemys: [K.NPCs.spottedShark], allies: [K.NPCs.hammerFish])
+            setBattle(stackView, enemys: [K.NPCs.spottedShark], allies: [K.NPCs.hammerFish], ifHeroWon: 110, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 427:
             Pocket.food -= 1
         case 426:
-            setBattle(stackView, enemys: [K.NPCs.knightOfTheWater], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.knightOfTheWater], allies: nil, ifHeroWon: 38, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 429:
-            setBattle(stackView, enemys: [K.NPCs.electricEel], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.electricEel], allies: nil, ifHeroWon: 353, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 430:
             Hero.luck -= 1
         case 433:
             Hero.health -= 4
         case 442:
-            setBattle(stackView, enemys: [K.NPCs.firstKnightOfTheWater, K.NPCs.secondKnightOfTheWater, K.NPCs.thirdKnightOfTheWater], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.firstKnightOfTheWater, K.NPCs.secondKnightOfTheWater, K.NPCs.thirdKnightOfTheWater], allies: nil, ifHeroWon: 414, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 444:
             Hero.health -= 4
         case 450:
-            setBattle(stackView, enemys: [K.NPCs.seaSpider], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.seaSpider], allies: nil, ifHeroWon: 414, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 451:
             Pocket.gold -= 2
             Pocket.pickItem(item: K.Items.swordFish)
@@ -3727,34 +3745,34 @@ struct StoryBrain {
         case 467:
             Pocket.food -= 2
         case 469:
-            setBattle(stackView, enemys: [K.NPCs.kondor], allies: [K.NPCs.owl])
+            setBattle(stackView, enemys: [K.NPCs.kondor], allies: [K.NPCs.owl], ifHeroWon: 429, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 470:
             Pocket.removeItem(item: K.Items.driedCrab)
         case 479:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.knightOfTheWater])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.knightOfTheWater], ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 484:
             Pocket.gold += 10
         case 485:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.captain])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.captain], ifHeroWon: 488, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 493:
-            setBattle(stackView, enemys: [K.NPCs.kondor], allies: [K.NPCs.griff])
+            setBattle(stackView, enemys: [K.NPCs.kondor], allies: [K.NPCs.griff], ifHeroWon: 429, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 502:
             Pocket.gold -= 2
             Pocket.pickItem(item: K.Items.moonFish)
         case 505:
             Hero.health -= 5
         case 506:
-            setBattle(stackView, enemys: [K.NPCs.hammerFish], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.hammerFish], allies: nil, ifHeroWon: 32, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 518:
-            setBattle(stackView, enemys: [K.NPCs.electricSkat], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.electricSkat], allies: nil, ifHeroWon: 64, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 532:
             Hero.health -= 2
-            setBattle(stackView, enemys: [K.NPCs.firstKnightOfTheWater, K.NPCs.secondKnightOfTheWater], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.firstKnightOfTheWater, K.NPCs.secondKnightOfTheWater], allies: nil, ifHeroWon: 414, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 533:
-            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.sailor])
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.sailor], ifHeroWon: 217, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 538:
             Hero.health -= 2
-            setBattle(stackView, enemys: [K.NPCs.seaNeedle], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.seaNeedle], allies: nil, ifHeroWon: 214, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 540:
             Pocket.gold += 2
         case 542:
@@ -3766,21 +3784,23 @@ struct StoryBrain {
         case 559:
             Hero.health += 3
         case 563:
-            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.captain])
+            setBattle(stackView, enemys: [K.NPCs.firstWarrior, K.NPCs.secondWarrior], allies: [K.NPCs.captain], ifHeroWon: 478, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
+        case 564:
+            setBattle(stackView, enemys: [K.NPCs.firstBarrakuda, K.NPCs.secondBarrakuda], allies: nil, ifHeroWon: 277, ifEnemyWon: 62, ifAllyWon: nil, specialConditions: 4)
         case 565:
-            setBattle(stackView, enemys: [K.NPCs.manEater], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.manEater], allies: nil, ifHeroWon: 82, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 573:
-            setBattle(stackView, enemys: [K.NPCs.wingedLion], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.wingedLion], allies: nil, ifHeroWon: 324, ifEnemyWon: 630, ifAllyWon: 61, specialConditions: 0)
         case 576:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.knightOfTheWater])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.knightOfTheWater], ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 577:
             Pocket.pickItem(item: K.Items.smoothPebble)
         case 579:
             Hero.health -= 1
-        case 581:
-            setBattle(stackView, enemys: [K.NPCs.shark], allies: nil)
+//        case 581:
+//            setBattle(stackView, enemys: [K.NPCs.shark], allies: nil)
         case 582:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: nil)
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: nil, ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 583:
             Pocket.pickItem(item: K.Items.sink)
         case 589:
@@ -3790,7 +3810,7 @@ struct StoryBrain {
         case 596:
             Pocket.pickItem(item: K.Items.crabClaw)
         case 599:
-            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.wingedLion])
+            setBattle(stackView, enemys: [K.NPCs.firstPirat, K.NPCs.secondPirat, K.NPCs.thirdPirat], allies: [K.NPCs.wingedLion], ifHeroWon: 198, ifEnemyWon: 630, ifAllyWon: nil, specialConditions: 0)
         case 604:
             Pocket.pickItem(item: K.Items.rubyHoop)
         case 605:
@@ -3816,10 +3836,10 @@ struct StoryBrain {
     
     //MARK: - Battle Functions
     
-    mutating func setBattle(_ stackView: UIStackView, enemys:[NPC], allies: [NPC]?) {
+    mutating func setBattle(_ stackView: UIStackView, enemys:[NPC], allies: [NPC]?, ifHeroWon: Int, ifEnemyWon: Int, ifAllyWon: Int?, specialConditions: Int) {
         let button = AddGoToBattleButton()
         stackView.addArrangedSubview(button)
-        self.currentBattle = Battle(enemys: enemys, allies: allies)
+        self.currentBattle = Battle(enemys: enemys, allies: allies, ifHeroWon: ifHeroWon, ifEnemyWon: ifEnemyWon, ifAllyWon: ifAllyWon, specialConditions: specialConditions)
     }
     
     func AddGoToBattleButton() -> UIButton {

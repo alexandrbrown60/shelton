@@ -8,7 +8,7 @@
 import UIKit
 
 protocol getDataFromArena {
-    func getData(data: Bool)
+    func getData(nextPath: Int)
 }
 
 class ViewController: UIViewController, getDataFromArena {
@@ -55,10 +55,18 @@ class ViewController: UIViewController, getDataFromArena {
         }
     }
     
-    func getData(data: Bool) {
-        if data {
-            let warButton = buttonStackView.arrangedSubviews[0]
-            warButton.isHidden = true
+    func getData(nextPath: Int) {
+        if nextPath == 630 {
+            story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: "630")
+        }
+        else {
+            buttonStackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
+            let button = UIButton()
+            button.setTitle(String(nextPath), for: .normal)
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.backgroundColor = UIColor.blue
+            button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+            buttonStackView.addArrangedSubview(button)
         }
     }
 
