@@ -18,13 +18,13 @@ class ViewController: UIViewController, getDataFromArena {
     @IBOutlet weak var scrollView: UIScrollView!
     
     //variables and constants
-    var story = StoryBrain(pathNumber: 0)
+    var story = StoryBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //add first text and button
-        mainText.text = story.getPathText()
+        mainText.text = story.getText()
         let button = UIButton()
             button.setTitle("1", for: .normal)
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -34,6 +34,10 @@ class ViewController: UIViewController, getDataFromArena {
 
     }
 
+    
+    //MARK: - Button functions
+    
+    //get next path text and buttons
     @objc func buttonPressed(_ sender: UIButton!) {
         let userChoice = sender.currentTitle!
         
@@ -43,6 +47,7 @@ class ViewController: UIViewController, getDataFromArena {
         
     }
     
+    //open arena view controller and send them current battle info
     @objc func goToArena(_ sender: UIButton!) {
         self.performSegue(withIdentifier: "goToArena", sender: self)
     }
@@ -54,20 +59,11 @@ class ViewController: UIViewController, getDataFromArena {
             destinationVC.delegate = self
         }
     }
+        
     
+    //MARK: - Delegate
     func getData(nextPath: Int) {
-        if nextPath == 630 {
-            story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: "630")
-        }
-        else {
-            buttonStackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
-            let button = UIButton()
-            button.setTitle(String(nextPath), for: .normal)
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.backgroundColor = UIColor.blue
-            button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-            buttonStackView.addArrangedSubview(button)
-        }
+        story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: String(nextPath))
     }
 
 }

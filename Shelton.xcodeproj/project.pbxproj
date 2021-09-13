@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F3282F026E8FFB300E687B4 /* testStory.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F3282EF26E8FFB300E687B4 /* testStory.json */; };
 		1F44A27A26D4F57000382E3F /* Pocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44A27926D4F57000382E3F /* Pocket.swift */; };
 		1F44A27C26D4F6CE00382E3F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44A27B26D4F6CE00382E3F /* Item.swift */; };
 		1F471BCE26AFFE62005C6528 /* NPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BCD26AFFE62005C6528 /* NPC.swift */; };
 		1F471BD026B002A9005C6528 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BCF26B002A9005C6528 /* Hero.swift */; };
 		1F5A160626D6332400B7F4E7 /* ArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A160526D6332400B7F4E7 /* ArenaViewController.swift */; };
 		1F5A160A26D63BA300B7F4E7 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A160926D63BA300B7F4E7 /* Battle.swift */; };
+		1F614FF726EA08B0006734DE /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F614FF626EA08B0006734DE /* JSONManager.swift */; };
 		1FB2794C26DE605D00CA0103 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2794B26DE605D00CA0103 /* Constants.swift */; };
 		1FB7EC3D26D2571800D9C5E0 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7EC3C26D2571800D9C5E0 /* InventoryViewController.swift */; };
+		1FEF47F626E6730700DD54F2 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF47F526E6730700DD54F2 /* Skill.swift */; };
 		1FF86E0B26AEA832005A68BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E0A26AEA832005A68BE /* AppDelegate.swift */; };
 		1FF86E0D26AEA832005A68BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E0C26AEA832005A68BE /* SceneDelegate.swift */; };
 		1FF86E0F26AEA832005A68BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E0E26AEA832005A68BE /* ViewController.swift */; };
@@ -22,18 +25,21 @@
 		1FF86E1426AEA834005A68BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF86E1326AEA834005A68BE /* Assets.xcassets */; };
 		1FF86E1726AEA834005A68BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FF86E1526AEA834005A68BE /* LaunchScreen.storyboard */; };
 		1FF86E2D26AEB4A3005A68BE /* StoryBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E2C26AEB4A3005A68BE /* StoryBrain.swift */; };
-		1FF86E3026AEB78D005A68BE /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E2F26AEB78D005A68BE /* Choice.swift */; };
+		1FF86E3026AEB78D005A68BE /* PathObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E2F26AEB78D005A68BE /* PathObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F3282EF26E8FFB300E687B4 /* testStory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testStory.json; sourceTree = "<group>"; };
 		1F44A27926D4F57000382E3F /* Pocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pocket.swift; sourceTree = "<group>"; };
 		1F44A27B26D4F6CE00382E3F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		1F471BCD26AFFE62005C6528 /* NPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPC.swift; sourceTree = "<group>"; };
 		1F471BCF26B002A9005C6528 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		1F5A160526D6332400B7F4E7 /* ArenaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaViewController.swift; sourceTree = "<group>"; };
 		1F5A160926D63BA300B7F4E7 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
+		1F614FF626EA08B0006734DE /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		1FB2794B26DE605D00CA0103 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1FB7EC3C26D2571800D9C5E0 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		1FEF47F526E6730700DD54F2 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		1FF86E0726AEA832005A68BE /* Shelton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shelton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF86E0A26AEA832005A68BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF86E0C26AEA832005A68BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +49,7 @@
 		1FF86E1626AEA834005A68BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FF86E1826AEA834005A68BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FF86E2C26AEB4A3005A68BE /* StoryBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBrain.swift; sourceTree = "<group>"; };
-		1FF86E2F26AEB78D005A68BE /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
+		1FF86E2F26AEB78D005A68BE /* PathObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 		1FF86E0926AEA832005A68BE /* Shelton */ = {
 			isa = PBXGroup;
 			children = (
+				1F3282EF26E8FFB300E687B4 /* testStory.json */,
 				1FF86E0A26AEA832005A68BE /* AppDelegate.swift */,
 				1FF86E1326AEA834005A68BE /* Assets.xcassets */,
 				1FF86E2E26AEB4A9005A68BE /* Model */,
@@ -110,13 +117,15 @@
 			isa = PBXGroup;
 			children = (
 				1FF86E2C26AEB4A3005A68BE /* StoryBrain.swift */,
-				1FF86E2F26AEB78D005A68BE /* Choice.swift */,
+				1FF86E2F26AEB78D005A68BE /* PathObject.swift */,
 				1F471BCD26AFFE62005C6528 /* NPC.swift */,
 				1F471BCF26B002A9005C6528 /* Hero.swift */,
 				1F44A27926D4F57000382E3F /* Pocket.swift */,
 				1F44A27B26D4F6CE00382E3F /* Item.swift */,
 				1F5A160926D63BA300B7F4E7 /* Battle.swift */,
 				1FB2794B26DE605D00CA0103 /* Constants.swift */,
+				1FEF47F526E6730700DD54F2 /* Skill.swift */,
+				1F614FF626EA08B0006734DE /* JSONManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +190,7 @@
 				1FF86E1726AEA834005A68BE /* LaunchScreen.storyboard in Resources */,
 				1FF86E1426AEA834005A68BE /* Assets.xcassets in Resources */,
 				1FF86E1226AEA832005A68BE /* Main.storyboard in Resources */,
+				1F3282F026E8FFB300E687B4 /* testStory.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,11 +203,13 @@
 			files = (
 				1F44A27C26D4F6CE00382E3F /* Item.swift in Sources */,
 				1FF86E2D26AEB4A3005A68BE /* StoryBrain.swift in Sources */,
-				1FF86E3026AEB78D005A68BE /* Choice.swift in Sources */,
+				1FF86E3026AEB78D005A68BE /* PathObject.swift in Sources */,
 				1F471BCE26AFFE62005C6528 /* NPC.swift in Sources */,
 				1FF86E0F26AEA832005A68BE /* ViewController.swift in Sources */,
 				1F471BD026B002A9005C6528 /* Hero.swift in Sources */,
 				1FB7EC3D26D2571800D9C5E0 /* InventoryViewController.swift in Sources */,
+				1F614FF726EA08B0006734DE /* JSONManager.swift in Sources */,
+				1FEF47F626E6730700DD54F2 /* Skill.swift in Sources */,
 				1FB2794C26DE605D00CA0103 /* Constants.swift in Sources */,
 				1F5A160626D6332400B7F4E7 /* ArenaViewController.swift in Sources */,
 				1F44A27A26D4F57000382E3F /* Pocket.swift in Sources */,

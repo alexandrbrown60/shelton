@@ -13,9 +13,7 @@ class Pocket: Hero {
     static var pocket: [Item] = []
     
     static func pickItem(item: Item) {
-        if Pocket.pocket.count < 6 {
-            Pocket.pocket.append(item)
-        }
+        Pocket.pocket.append(item)
     }
     
     static func checkForGold(_ gold: Int) -> Bool {
@@ -32,12 +30,8 @@ class Pocket: Hero {
         return false
     }
     
-    static func checkForItem(_ item: Item) -> Bool {
-        if Pocket.pocket.contains(item) {
-            return true
-        } else {
-            return false
-        }
+    static func checkForItem(byId item: Int) -> Bool {
+        return true
     }
     
     static func removeItem(item: Item) {

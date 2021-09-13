@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item: Equatable {
+struct Item: Equatable, Codable {
     let name: String
     let description: String
     let action: Int?
