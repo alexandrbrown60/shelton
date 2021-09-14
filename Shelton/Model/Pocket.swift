@@ -9,7 +9,7 @@ import Foundation
 
 class Pocket: Hero {
     static var gold: Int = 15
-    static var food: Int = 0
+    static var food: Int = 1
     static var pocket: [Item] = []
     
     static func pickItem(item: Item) {

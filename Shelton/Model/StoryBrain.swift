@@ -10,6 +10,8 @@ import UIKit
 struct StoryBrain {
     var pathNumber: Int = 0
     var currentBattle: Battle?
+    var currentLuckTrying: (Int, Int)?
+    var currentSecret: (String, Int)?
     let jsonManager = JSONManager(jsonFileName: "testStory")
     
 //MARK: - Getting data from json
@@ -133,7 +135,11 @@ struct StoryBrain {
         }
         if let battle = battle() {
             self.currentBattle = battle
-            buttonsArray.insert(AddGoToBattleButton(), at: 0)
+            buttonsArray.insert(addGoToBattleButton(), at: 0)
+        }
+        if let tryLuck = tryLuck() {
+            self.currentLuckTrying = tryLuck
+            buttonsArray.insert(addTryLuckButton(), at: 0)
         }
         return buttonsArray
     }
@@ -167,7 +173,7 @@ struct StoryBrain {
     
     //MARK: - Battle Functions
     
-    func AddGoToBattleButton() -> UIButton {
+    func addGoToBattleButton() -> UIButton {
         let button = UIButton()
         button.setTitle("Начать битву", for: .normal)
         button.backgroundColor = UIColor.blue
@@ -181,5 +187,20 @@ struct StoryBrain {
     }
 
 //MARK: - Luck trying
-    
+    func addTryLuckButton() -> UIButton {
+        let button = UIButton()
+        button.setTitle("Испытать удачу", for: .normal)
+        button.backgroundColor = UIColor.blue
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(ViewController.tryLuck), for: .touchUpInside)
+        return button
+    }
+    func getCurrentLuckTrying() -> (Int, Int) {
+       return currentLuckTrying!
+    }
+//MARK: - Input secret functions
+    func addInput() -> UITextField {
+        let input = UITextField()
+        return input
+    }
 }

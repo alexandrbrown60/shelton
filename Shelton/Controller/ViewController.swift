@@ -10,8 +10,12 @@ import UIKit
 protocol getDataFromArena {
     func getData(nextPath: Int)
 }
+protocol getLuckTryingResult {
+    func getResult(pathNumber: Int)
+}
 
-class ViewController: UIViewController, getDataFromArena {
+class ViewController: UIViewController, getDataFromArena, getLuckTryingResult {
+    
     //outlets
     @IBOutlet weak var mainText: UILabel!
     @IBOutlet weak var buttonStackView: UIStackView!
@@ -52,11 +56,22 @@ class ViewController: UIViewController, getDataFromArena {
         self.performSegue(withIdentifier: "goToArena", sender: self)
     }
     
+    //try luck
+    @objc func tryLuck(_ sender: UIButton!) {
+        self.performSegue(withIdentifier: "tryLuck", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToArena" {
             let destinationVC = segue.destination as! ArenaViewController
             destinationVC.battle = story.getCurrentBattle()
             destinationVC.delegate = self
+        }
+        
+        if segue.identifier == "tryLuck" {
+            let luckVC = segue.destination as! LuckViewController
+            luckVC.tryLuck = story.getCurrentLuckTrying()
+            luckVC.delegate = self
         }
     }
         
@@ -64,6 +79,10 @@ class ViewController: UIViewController, getDataFromArena {
     //MARK: - Delegate
     func getData(nextPath: Int) {
         story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: String(nextPath))
+    }
+    
+    func getResult(pathNumber: Int) {
+        story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: String(pathNumber))
     }
 
 }

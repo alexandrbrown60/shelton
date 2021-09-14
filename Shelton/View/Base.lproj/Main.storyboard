@@ -72,11 +72,12 @@
                         <outlet property="mainText" destination="EGk-Rc-pQt" id="igE-Qj-0Be"/>
                         <outlet property="scrollView" destination="fpZ-6X-jGo" id="u5H-4o-9xb"/>
                         <segue destination="fht-Y1-9av" kind="show" identifier="goToArena" id="J2J-Nz-4Tj"/>
+                        <segue destination="vVT-4O-giA" kind="show" identifier="tryLuck" id="5EE-e8-w9u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="115.17857142857142"/>
+            <point key="canvasLocation" x="1023" y="115"/>
         </scene>
         <!--Arena View Controller-->
         <scene sceneID="3YT-fk-vK2">
@@ -109,6 +110,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLe-eb-3bI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1860.8695652173915" y="-287.27678571428572"/>
+        </scene>
+        <!--Luck View Controller-->
+        <scene sceneID="6j4-ba-ZtH">
+            <objects>
+                <viewController id="vVT-4O-giA" customClass="LuckViewController" customModule="Shelton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LG1-Fl-r6h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85p-fp-Gkc">
+                                <rect key="frame" x="61" y="438" width="292" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="die.face.1" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Go1-DQ-wmN">
+                                <rect key="frame" x="85" y="297" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="die.face.2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Hgd-bH-pu2">
+                                <rect key="frame" x="226" y="297" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="88W-c1-gTF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="97t-58-4K0"/>
+                    <connections>
+                        <outlet property="firstDice" destination="Go1-DQ-wmN" id="Ko2-bs-E1L"/>
+                        <outlet property="result" destination="85p-fp-Gkc" id="reE-dx-Wrg"/>
+                        <outlet property="secondDice" destination="Hgd-bH-pu2" id="Nbs-XO-DwE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x19-qV-EKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2705.7971014492755" y="114.50892857142857"/>
         </scene>
         <!--Inventory View Controller-->
         <scene sceneID="16B-2N-F56">
@@ -201,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ang-rW-q6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860.8695652173915" y="453.34821428571428"/>
+            <point key="canvasLocation" x="1861" y="504"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YWZ-nY-ACR">
@@ -223,6 +262,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="die.face.1" catalog="system" width="128" height="114"/>
+        <image name="die.face.2" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
