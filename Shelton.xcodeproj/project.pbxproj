@@ -15,6 +15,8 @@
 		1F5A160626D6332400B7F4E7 /* ArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A160526D6332400B7F4E7 /* ArenaViewController.swift */; };
 		1F5A160A26D63BA300B7F4E7 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A160926D63BA300B7F4E7 /* Battle.swift */; };
 		1F614FF726EA08B0006734DE /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F614FF626EA08B0006734DE /* JSONManager.swift */; };
+		1F67101D26F0D315002AAC86 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F67101C26F0D315002AAC86 /* StartViewController.swift */; };
+		1F67101F26F0D588002AAC86 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F67101E26F0D588002AAC86 /* AboutViewController.swift */; };
 		1F93BE6926EF886900490A1E /* LuckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F93BE6826EF886900490A1E /* LuckViewController.swift */; };
 		1FB2794C26DE605D00CA0103 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2794B26DE605D00CA0103 /* Constants.swift */; };
 		1FB7EC3D26D2571800D9C5E0 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7EC3C26D2571800D9C5E0 /* InventoryViewController.swift */; };
@@ -38,6 +40,8 @@
 		1F5A160526D6332400B7F4E7 /* ArenaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaViewController.swift; sourceTree = "<group>"; };
 		1F5A160926D63BA300B7F4E7 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 		1F614FF626EA08B0006734DE /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
+		1F67101C26F0D315002AAC86 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		1F67101E26F0D588002AAC86 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		1F93BE6826EF886900490A1E /* LuckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckViewController.swift; sourceTree = "<group>"; };
 		1FB2794B26DE605D00CA0103 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1FB7EC3C26D2571800D9C5E0 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				1FB7EC3C26D2571800D9C5E0 /* InventoryViewController.swift */,
 				1F5A160526D6332400B7F4E7 /* ArenaViewController.swift */,
 				1F93BE6826EF886900490A1E /* LuckViewController.swift */,
+				1F67101C26F0D315002AAC86 /* StartViewController.swift */,
+				1F67101E26F0D588002AAC86 /* AboutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -214,7 +220,9 @@
 				1FB7EC3D26D2571800D9C5E0 /* InventoryViewController.swift in Sources */,
 				1F614FF726EA08B0006734DE /* JSONManager.swift in Sources */,
 				1FEF47F626E6730700DD54F2 /* Skill.swift in Sources */,
+				1F67101D26F0D315002AAC86 /* StartViewController.swift in Sources */,
 				1FB2794C26DE605D00CA0103 /* Constants.swift in Sources */,
+				1F67101F26F0D588002AAC86 /* AboutViewController.swift in Sources */,
 				1F5A160626D6332400B7F4E7 /* ArenaViewController.swift in Sources */,
 				1F44A27A26D4F57000382E3F /* Pocket.swift in Sources */,
 				1FF86E0B26AEA832005A68BE /* AppDelegate.swift in Sources */,

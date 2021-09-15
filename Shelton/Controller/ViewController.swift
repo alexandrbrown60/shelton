@@ -13,8 +13,11 @@ protocol getDataFromArena {
 protocol getLuckTryingResult {
     func getResult(pathNumber: Int)
 }
+protocol setInputSecret {
+    func setTextField(placeholder: String)
+}
 
-class ViewController: UIViewController, getDataFromArena, getLuckTryingResult {
+class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, setInputSecret {
     
     //outlets
     @IBOutlet weak var mainText: UILabel!
@@ -35,6 +38,8 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult {
             button.backgroundColor = UIColor.blue
             button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
             buttonStackView.addArrangedSubview(button)
+        
+        story.delegate = self
 
     }
 
@@ -74,9 +79,14 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult {
             luckVC.delegate = self
         }
     }
+    
+    //input secret
+    @objc func inputSecret(_ sender: UIButton!) {
+        
+    }
         
     
-    //MARK: - Delegate
+    //MARK: - Delegates functions
     func getData(nextPath: Int) {
         story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: String(nextPath))
     }
@@ -84,6 +94,70 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult {
     func getResult(pathNumber: Int) {
         story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: String(pathNumber))
     }
+    
+    func setTextField(placeholder: String) {
+        let input = UITextField()
+        input.placeholder = placeholder
+        input.keyboardType = UIKeyboardType.default
+        input.returnKeyType = UIReturnKeyType.done
+        input.delegate = self
+        buttonStackView.addArrangedSubview(input)
+    }
 
 }
+
+
+//MARK: - UITextFieldDelegate extension for ViewController
+
+extension ViewController: UITextFieldDelegate {
+        func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+            // return NO to disallow editing.
+            print("TextField should begin editing method called")
+            return true
+        }
+
+        func textFieldDidBeginEditing(_ textField: UITextField) {
+            // became first responder
+            print("TextField did begin editing method called")
+        }
+
+        func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+            // return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end
+            print("TextField should snd editing method called")
+            return true
+        }
+
+        func textFieldDidEndEditing(_ textField: UITextField) {
+            // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
+            print("TextField did end editing method called")
+        }
+
+        func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+            // if implemented, called in place of textFieldDidEndEditing:
+            print("TextField did end editing with reason method called")
+        }
+
+        func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            // return NO to not change text
+            print("While entering the characters this method gets called")
+            return true
+        }
+
+        func textFieldShouldClear(_ textField: UITextField) -> Bool {
+            // called when clear button pressed. return NO to ignore (no notifications)
+            print("TextField should clear method called")
+            return true
+        }
+
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            print(story.currentSecret!)
+            if String(story.currentSecret!) == textField.text! {
+                textField.resignFirstResponder()
+                story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: String(story.currentSecret!))
+            }
+            return true
+        }
+}
+
+
 

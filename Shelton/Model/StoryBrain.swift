@@ -11,8 +11,9 @@ struct StoryBrain {
     var pathNumber: Int = 0
     var currentBattle: Battle?
     var currentLuckTrying: (Int, Int)?
-    var currentSecret: (String, Int)?
+    var currentSecret: Int?
     let jsonManager = JSONManager(jsonFileName: "testStory")
+    var delegate: setInputSecret?
     
 //MARK: - Getting data from json
     //get values from path
@@ -114,8 +115,8 @@ struct StoryBrain {
 //MARK: - Interract with UI
     
     //generate choice buttons
-    mutating func setButtons() -> [UIButton] {
-        var buttonsArray: [UIButton] = []
+    mutating func setButtons() -> [UIControl] {
+        var buttonsArray: [UIControl] = []
         if let pathChoices = buttons() {
             pathChoices.forEach { (key: Int, value: Bool) in
                 let button = UIButton()
@@ -141,6 +142,10 @@ struct StoryBrain {
             self.currentLuckTrying = tryLuck
             buttonsArray.insert(addTryLuckButton(), at: 0)
         }
+        if let secret = inputSecret() {
+            self.currentSecret = secret.1
+            delegate?.setTextField(placeholder: secret.0)
+        }
         return buttonsArray
     }
     
@@ -163,7 +168,7 @@ struct StoryBrain {
         }
         
         //add buttons and place it into stack view
-        let buttons: [UIButton] = setButtons()
+        let buttons: [UIControl] = setButtons()
         buttons.forEach {
             stackView.addArrangedSubview($0)
         }
@@ -198,9 +203,6 @@ struct StoryBrain {
     func getCurrentLuckTrying() -> (Int, Int) {
        return currentLuckTrying!
     }
-//MARK: - Input secret functions
-    func addInput() -> UITextField {
-        let input = UITextField()
-        return input
-    }
+
 }
+
