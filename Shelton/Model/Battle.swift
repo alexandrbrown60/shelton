@@ -11,29 +11,37 @@ struct Battle {
     var enemys: [NPC]
     var allies: [NPC]?
     let dice: [Int] = Array(1...6)
-    let ifHeroWon: Int
+    let ifHeroWon: [Int]
     let ifEnemyWon: Int
-    let ifAllyWon: Int?
-    var whoIsWon: Int = 0
-    let specialConditions: Int
+    var whoIsWon: [Int] = []
     let hero = NPC(name: "Герой", health: Hero.health, attackStrenght: Hero.attackStrenght)
     
-    init(enemys: [NPC], allies: [NPC]?, ifHeroWon: Int, ifEnemyWon: Int, ifAllyWon: Int?, specialConditions: Int) {
-        self.enemys = enemys
-        self.allies = allies
+    init(enemys: [Int], allies: [Int]?, ifHeroWon: [Int], ifEnemyWon: Int) {
+        self.enemys = {
+            var NPCs: [NPC] = []
+            enemys.forEach({ enemy in
+                NPCs.append(K.NPCs[enemy])
+            })
+            return NPCs
+        }()
         self.ifHeroWon = ifHeroWon
         self.ifEnemyWon = ifEnemyWon
-        self.ifAllyWon = ifAllyWon
-        self.specialConditions = specialConditions
         
         if self.allies == nil {
             self.allies = [hero]
         }
         else {
+            self.allies = setNPC(npcs: allies!)
             self.allies?.append(hero)
         }
-        print(self.ifHeroWon)
-        print(self.ifEnemyWon)
+    }
+    
+    func setNPC(npcs: [Int]) -> [NPC] {
+        var NPCs: [NPC] = []
+        npcs.forEach({ npc in
+            NPCs.append(K.NPCs[npc])
+        })
+        return NPCs
     }
     
     mutating func doBattle(logs: UILabel) {
@@ -97,23 +105,23 @@ struct Battle {
             var condition: Bool = false
             if enemysDead() && heroDead() != true {
                 condition = true
-                print("Герой победил")
                 whoIsWon = ifHeroWon
+                if let hero = allies?.last {
+                    Hero.health = hero.health
+                }
             }
             if heroDead() && enemysDead() != true {
-                print("Враг победил")
                 condition = true
-                whoIsWon = ifEnemyWon
+                whoIsWon.append(ifEnemyWon)
             }
             return condition
         }
         
-       
     }
     
-    func getBattleResult() -> Int {
+    func getBattleResult() -> [Int] {
         //return Int for next path number
         return whoIsWon
     }
-
+    
 }

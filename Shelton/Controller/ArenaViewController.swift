@@ -19,7 +19,7 @@ class ArenaViewController: UIViewController {
   
     override func viewWillDisappear(_ animated: Bool) {
         if let battleResult = battle?.getBattleResult() {
-            delegate?.getData(nextPath: battleResult)
+            delegate?.getData(nextPath: battleResult[0])
         }
     }
     

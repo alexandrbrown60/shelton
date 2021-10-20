@@ -14,6 +14,7 @@ class InventoryViewController: UIViewController {
     @IBOutlet weak var luck: UILabel!
     @IBOutlet weak var gold: UILabel!
     @IBOutlet weak var food: UILabel!
+    @IBOutlet weak var items: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,5 +24,11 @@ class InventoryViewController: UIViewController {
         luck.text = "🍀 Удача - \(Hero.luck)"
         gold.text = "💰 Золото - \(Pocket.gold)"
         food.text = "🍗 Еда - \(Pocket.food)"
+        items.text = ""
+        
+        let pocket = Pocket.pocket
+        pocket.forEach({ item in
+            items.text! += "- \(item.name) \n"
+        })
     }
 }

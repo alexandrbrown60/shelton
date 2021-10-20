@@ -6,16 +6,15 @@
 //
 
 import Foundation
+import CoreData
 
-class Pocket: Hero {
+public class Pocket {
     static var gold: Int = 15
-    static var food: Int = 0
+    static var food: Int = 1
     static var pocket: [Item] = []
     
     static func pickItem(item: Item) {
-        if Pocket.pocket.count < 6 {
-            Pocket.pocket.append(item)
-        }
+        Pocket.pocket.append(item)
     }
     
     static func checkForGold(_ gold: Int) -> Bool {
@@ -32,12 +31,11 @@ class Pocket: Hero {
         return false
     }
     
-    static func checkForItem(_ item: Item) -> Bool {
-        if Pocket.pocket.contains(item) {
+    static func checkForItem(byId item: Int) -> Bool {
+        if Pocket.pocket.contains(K.Items[item]) {
             return true
-        } else {
-            return false
         }
+        return false
     }
     
     static func removeItem(item: Item) {

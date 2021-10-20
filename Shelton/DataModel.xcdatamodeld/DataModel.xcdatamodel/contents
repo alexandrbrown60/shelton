@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CheckPoint" representedClassName="CheckPoint" syncable="YES">
+        <attribute name="pathId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeroData" inverseName="checkPoint" inverseEntity="HeroData"/>
+        <relationship name="pocket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PocketData" inverseName="checkPoint" inverseEntity="PocketData"/>
+    </entity>
+    <entity name="HeroData" representedClassName="HeroData" syncable="YES">
+        <attribute name="attackStrenght" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="health" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="luck" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="maxHealth" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="checkPoint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CheckPoint" inverseName="hero" inverseEntity="CheckPoint"/>
+    </entity>
+    <entity name="ItemData" representedClassName="ItemData" syncable="YES">
+        <attribute name="action" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="pocket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PocketData" inverseName="items" inverseEntity="PocketData"/>
+    </entity>
+    <entity name="PocketData" representedClassName="PocketData" syncable="YES">
+        <attribute name="food" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="gold" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="checkPoint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CheckPoint" inverseName="pocket" inverseEntity="CheckPoint"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemData" inverseName="pocket" inverseEntity="ItemData"/>
+    </entity>
+    <elements>
+        <element name="CheckPoint" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="HeroData" positionX="-63" positionY="-9" width="128" height="104"/>
+        <element name="PocketData" positionX="-54" positionY="0" width="128" height="89"/>
+        <element name="ItemData" positionX="-36" positionY="9" width="128" height="74"/>
+    </elements>
+</model>
