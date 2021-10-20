@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bhK-3P-scd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bhK-3P-scd">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,23 +37,16 @@
                                 <rect key="frame" x="0.0" y="98" width="414" height="764"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tHJ-mr-su3">
-                                        <rect key="frame" x="20" y="20" width="374" height="140.33333333333334"/>
+                                        <rect key="frame" x="20" y="19.999999999999993" width="374" height="90.333333333333314"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNY-NP-IXB">
-                                                <rect key="frame" x="0.0" y="0.0" width="77" height="30"/>
-                                                <state key="normal" title="Инвентарь"/>
-                                                <connections>
-                                                    <segue destination="C7g-Rt-rka" kind="show" id="fZw-Bj-3bx"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGk-Rc-pQt">
-                                                <rect key="frame" x="0.0" y="50" width="41.333333333333336" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="TextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u9M-jL-IOA">
-                                                <rect key="frame" x="0.0" y="90.333333333333343" width="289" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="u9M-jL-IOA">
+                                                <rect key="frame" x="0.0" y="40.333333333333343" width="374" height="50"/>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -66,8 +58,9 @@
                                 <constraints>
                                     <constraint firstItem="tHJ-mr-su3" firstAttribute="width" secondItem="fpZ-6X-jGo" secondAttribute="width" multiplier="0.903382" id="Pi6-zG-Azq"/>
                                     <constraint firstItem="tHJ-mr-su3" firstAttribute="leading" secondItem="fpZ-6X-jGo" secondAttribute="leading" constant="20" symbolic="YES" id="U5Q-mu-eQd"/>
+                                    <constraint firstItem="u9M-jL-IOA" firstAttribute="width" secondItem="fpZ-6X-jGo" secondAttribute="width" multiplier="0.903382" id="aXy-8C-DFm"/>
                                     <constraint firstItem="tHJ-mr-su3" firstAttribute="top" secondItem="fpZ-6X-jGo" secondAttribute="top" constant="20" symbolic="YES" id="b4X-4y-iiR"/>
-                                    <constraint firstAttribute="bottom" secondItem="tHJ-mr-su3" secondAttribute="bottom" constant="647.66666666666663" id="hck-FR-YGr"/>
+                                    <constraint firstAttribute="bottom" secondItem="tHJ-mr-su3" secondAttribute="bottom" constant="20" id="hck-FR-YGr"/>
                                     <constraint firstAttribute="trailing" secondItem="tHJ-mr-su3" secondAttribute="trailing" constant="20" symbolic="YES" id="t3W-RK-ouO"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="VZd-nY-Hek"/>
@@ -83,7 +76,13 @@
                             <constraint firstItem="fpZ-6X-jGo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="eDF-Is-YNE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dvg-Mo-bkG"/>
+                    <navigationItem key="navigationItem" id="dvg-Mo-bkG">
+                        <barButtonItem key="rightBarButtonItem" title="Инвентарь" id="TY6-mS-mdt">
+                            <connections>
+                                <segue destination="C7g-Rt-rka" kind="show" identifier="Inventory" id="jBi-xa-ra2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="buttonStackView" destination="u9M-jL-IOA" id="rbQ-CG-SvC"/>
                         <outlet property="mainText" destination="EGk-Rc-pQt" id="igE-Qj-0Be"/>
@@ -272,11 +271,18 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOl-FK-Opv">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
-                                        <state key="normal" title="Продолжить"/>
+                                        <state key="normal" title="Продолжить">
+                                            <color key="titleColor" name="TextColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="5Hb-Kc-q3X"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TED-KA-0DG">
                                         <rect key="frame" x="0.0" y="38" width="90" height="30"/>
-                                        <state key="normal" title="Начать"/>
+                                        <state key="normal" title="Начать">
+                                            <color key="titleColor" name="TextColor"/>
+                                        </state>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" id="vU3-Wb-wZC"/>
                                         </connections>
@@ -284,7 +290,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhN-yO-esa">
                                         <rect key="frame" x="0.0" y="76" width="90" height="30"/>
                                         <state key="normal" title="Об игре">
-                                            <color key="titleColor" systemColor="labelColor"/>
+                                            <color key="titleColor" name="TextColor"/>
                                         </state>
                                         <connections>
                                             <segue destination="9LZ-aB-n2k" kind="show" id="s19-kq-xkl"/>
@@ -310,6 +316,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eEy-8R-R34"/>
+                    <connections>
+                        <outlet property="continueButton" destination="GOl-FK-Opv" id="E4J-Oc-GlH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZx-gm-AUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -334,6 +343,9 @@
             <point key="canvasLocation" x="50.724637681159422" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5Hb-Kc-q3X"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="die.face.1" catalog="system" width="128" height="114"/>
         <image name="die.face.2" catalog="system" width="128" height="114"/>
@@ -344,8 +356,5 @@
         <namedColor name="TextColor">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

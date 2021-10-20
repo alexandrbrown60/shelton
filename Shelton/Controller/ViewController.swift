@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol getDataFromArena {
     func getData(nextPath: Int)
@@ -24,23 +25,53 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    //variables and constants
+    lazy var coreDataStack = CoreDataStack(modelName: "DataModel")
+    var currentCheckPoint: CheckPoint?
+
     var story = StoryBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //add first text and button
-        mainText.text = story.getText()
-        let button = UIButton()
-            button.setTitle("1", for: .normal)
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.backgroundColor = UIColor.blue
-            button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-            buttonStackView.addArrangedSubview(button)
+        //check for checkpoint
+        let checkPoint: NSFetchRequest<CheckPoint> = CheckPoint.fetchRequest()
+        do {
+            let result = try coreDataStack.managedContext.fetch(checkPoint)
+            if result.isEmpty {
+                //add first text and button
+                mainText.text = story.getText()
+                let button = PathButton(title: "1")
+                    button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+                    buttonStackView.addArrangedSubview(button)
+                
+                //and create checkpoint
+                currentCheckPoint = CheckPoint(context: coreDataStack.managedContext)
+                currentCheckPoint?.pathId = 0
+                let hero = HeroData(context: coreDataStack.managedContext)
+                let pocket = PocketData(context: coreDataStack.managedContext)
+                hero.attackStrenght = Int16(Hero.attackStrenght)
+                hero.health = Int16(Hero.health)
+                hero.maxHealth = Int16(Hero.maxHealth)
+                hero.luck = Int16(Hero.luck)
+                pocket.gold = 15
+                pocket.food = 2
+                
+                coreDataStack.saveContext()
+            }
+            else {
+                //load data
+                currentCheckPoint = result.first
+                if let pathId = currentCheckPoint?.pathId {
+                    story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: String(pathId))
+                }
+            }
+        }
+        catch let error as NSError {
+            print("Fetching error - \(error), \(error.userInfo)")
+        }
         
         story.delegate = self
-
+        
     }
 
     
@@ -54,6 +85,23 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
         
         scrollView.setContentOffset(.zero, animated: false)
         
+        //update or delete checkpoint
+        currentCheckPoint?.pathId = Int64(userChoice)!
+        currentCheckPoint?.hero?.health = Int16(Hero.health)
+        currentCheckPoint?.hero?.attackStrenght = Int16(Hero.attackStrenght)
+        currentCheckPoint?.hero?.luck = Int16(Hero.luck)
+        currentCheckPoint?.hero?.maxHealth = Int16(Hero.maxHealth)
+        currentCheckPoint?.pocket?.gold = Int16(Pocket.gold)
+        currentCheckPoint?.pocket?.food = Int16(Pocket.food)
+        if !Pocket.pocket.isEmpty {
+            Pocket.pocket.forEach { pocketItem in
+                let item = ItemData(context: coreDataStack.managedContext)
+                item.name = pocketItem.name
+                item.action = Int16(pocketItem.action ?? 0)
+                currentCheckPoint?.pocket?.addToItems(item)
+            }
+        }
+        coreDataStack.saveContext()
     }
     
     //open arena view controller and send them current battle info

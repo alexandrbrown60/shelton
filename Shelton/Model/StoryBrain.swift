@@ -12,11 +12,12 @@ struct StoryBrain {
     var currentBattle: Battle?
     var currentLuckTrying: (Int, Int)?
     var currentSecret: Int?
-    let jsonManager = JSONManager(jsonFileName: "testStory")
+    let jsonManager = JSONManager(jsonFileName: "mainStory")
     var delegate: setInputSecret?
     
-//MARK: - Getting data from json
-    //get values from path
+    //MARK: - Getting data from json
+    
+      //get values from path
       func getText() -> String {
           let text = jsonManager.getData(forPath: pathNumber)!.text
           return text
@@ -50,7 +51,9 @@ struct StoryBrain {
       //get hero status
       func checkStatus() {
           if let status = jsonManager.getData(forPath: pathNumber)!.status {
-              Hero.health += status.health ?? 0
+              if let health = status.health {
+                  Hero.addHealth(health)
+              }
               Hero.luck += status.luck ?? 0
           }
       }
@@ -97,7 +100,7 @@ struct StoryBrain {
       
       //get luck
       func tryLuck() -> (Int, Int)? {
-          if let luck = jsonManager.getData(forPath: pathNumber)!.luck {
+          if let luck = jsonManager.getData(forPath: pathNumber)!.tryLuck {
               return (luck.success, luck.fail)
           }
           return nil
@@ -112,21 +115,15 @@ struct StoryBrain {
       }
     
 
-//MARK: - Interract with UI
+    //MARK: - Interract with UI
     
     //generate choice buttons
     mutating func setButtons() -> [UIControl] {
         var buttonsArray: [UIControl] = []
         if let pathChoices = buttons() {
             pathChoices.forEach { (key: Int, value: Bool) in
-                let button = UIButton()
-                button.setTitle(String(key), for: .normal)
-                button.translatesAutoresizingMaskIntoConstraints = false
-                if value {
-                    button.backgroundColor = UIColor.blue
-                    button.isEnabled = true
-                }
-                else {
+                let button = PathButton(title: String(key))
+                if !value {
                     button.backgroundColor = UIColor.gray
                     button.isEnabled = false
                 }
@@ -163,7 +160,7 @@ struct StoryBrain {
             mainText.text = getText()
         }
         else {
-            self.pathNumber = Int(userChoice)! 
+            self.pathNumber = Int(userChoice)! - 1
             mainText.text = getText()
         }
         
@@ -179,10 +176,7 @@ struct StoryBrain {
     //MARK: - Battle Functions
     
     func addGoToBattleButton() -> UIButton {
-        let button = UIButton()
-        button.setTitle("Начать битву", for: .normal)
-        button.backgroundColor = UIColor.blue
-        button.translatesAutoresizingMaskIntoConstraints = false
+        let button = PathButton(title: "Начать битву")
         button.addTarget(self, action: #selector(ViewController.goToArena), for: .touchUpInside)
         return button
     }
@@ -191,12 +185,10 @@ struct StoryBrain {
         return currentBattle!
     }
 
-//MARK: - Luck trying
+    //MARK: - Luck trying
+    
     func addTryLuckButton() -> UIButton {
-        let button = UIButton()
-        button.setTitle("Испытать удачу", for: .normal)
-        button.backgroundColor = UIColor.blue
-        button.translatesAutoresizingMaskIntoConstraints = false
+        let button = PathButton(title: "Испытать удачу")
         button.addTarget(self, action: #selector(ViewController.tryLuck), for: .touchUpInside)
         return button
     }

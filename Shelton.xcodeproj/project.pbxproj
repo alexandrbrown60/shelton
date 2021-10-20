@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F3282F026E8FFB300E687B4 /* testStory.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F3282EF26E8FFB300E687B4 /* testStory.json */; };
+		1F0C4F5A2716E0A800198022 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C4F582716E0A800198022 /* DataModel.xcdatamodeld */; };
 		1F44A27A26D4F57000382E3F /* Pocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44A27926D4F57000382E3F /* Pocket.swift */; };
-		1F44A27C26D4F6CE00382E3F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44A27B26D4F6CE00382E3F /* Item.swift */; };
 		1F471BCE26AFFE62005C6528 /* NPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BCD26AFFE62005C6528 /* NPC.swift */; };
 		1F471BD026B002A9005C6528 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BCF26B002A9005C6528 /* Hero.swift */; };
 		1F5A160626D6332400B7F4E7 /* ArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A160526D6332400B7F4E7 /* ArenaViewController.swift */; };
@@ -17,10 +16,22 @@
 		1F614FF726EA08B0006734DE /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F614FF626EA08B0006734DE /* JSONManager.swift */; };
 		1F67101D26F0D315002AAC86 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F67101C26F0D315002AAC86 /* StartViewController.swift */; };
 		1F67101F26F0D588002AAC86 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F67101E26F0D588002AAC86 /* AboutViewController.swift */; };
+		1F78355C27199640008F2E4D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78355B27199640008F2E4D /* Item.swift */; };
+		1F7835652719A08E008F2E4D /* PocketData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78355D2719A08E008F2E4D /* PocketData+CoreDataClass.swift */; };
+		1F7835662719A08E008F2E4D /* PocketData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78355E2719A08E008F2E4D /* PocketData+CoreDataProperties.swift */; };
+		1F7835672719A08E008F2E4D /* CheckPoint+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78355F2719A08E008F2E4D /* CheckPoint+CoreDataClass.swift */; };
+		1F7835682719A08E008F2E4D /* CheckPoint+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7835602719A08E008F2E4D /* CheckPoint+CoreDataProperties.swift */; };
+		1F7835692719A08E008F2E4D /* HeroData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7835612719A08E008F2E4D /* HeroData+CoreDataClass.swift */; };
+		1F78356A2719A08E008F2E4D /* HeroData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7835622719A08E008F2E4D /* HeroData+CoreDataProperties.swift */; };
+		1F78356B2719A08E008F2E4D /* ItemData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7835632719A08E008F2E4D /* ItemData+CoreDataClass.swift */; };
+		1F78356C2719A08E008F2E4D /* ItemData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7835642719A08E008F2E4D /* ItemData+CoreDataProperties.swift */; };
 		1F93BE6926EF886900490A1E /* LuckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F93BE6826EF886900490A1E /* LuckViewController.swift */; };
+		1F94D47C270F29F700BB9439 /* mainStory.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F94D47B270F29F700BB9439 /* mainStory.json */; };
 		1FB2794C26DE605D00CA0103 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2794B26DE605D00CA0103 /* Constants.swift */; };
 		1FB7EC3D26D2571800D9C5E0 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7EC3C26D2571800D9C5E0 /* InventoryViewController.swift */; };
+		1FC66959271EE06D00DFF0EC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC66958271EE06D00DFF0EC /* CoreDataStack.swift */; };
 		1FEF47F626E6730700DD54F2 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF47F526E6730700DD54F2 /* Skill.swift */; };
+		1FF6EC0F27146AC800108053 /* PathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF6EC0E27146AC800108053 /* PathButton.swift */; };
 		1FF86E0B26AEA832005A68BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E0A26AEA832005A68BE /* AppDelegate.swift */; };
 		1FF86E0D26AEA832005A68BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E0C26AEA832005A68BE /* SceneDelegate.swift */; };
 		1FF86E0F26AEA832005A68BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF86E0E26AEA832005A68BE /* ViewController.swift */; };
@@ -32,9 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F3282EF26E8FFB300E687B4 /* testStory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testStory.json; sourceTree = "<group>"; };
+		1F0C4F592716E0A800198022 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		1F44A27926D4F57000382E3F /* Pocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pocket.swift; sourceTree = "<group>"; };
-		1F44A27B26D4F6CE00382E3F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		1F471BCD26AFFE62005C6528 /* NPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPC.swift; sourceTree = "<group>"; };
 		1F471BCF26B002A9005C6528 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		1F5A160526D6332400B7F4E7 /* ArenaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaViewController.swift; sourceTree = "<group>"; };
@@ -42,10 +52,22 @@
 		1F614FF626EA08B0006734DE /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		1F67101C26F0D315002AAC86 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		1F67101E26F0D588002AAC86 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		1F78355B27199640008F2E4D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		1F78355D2719A08E008F2E4D /* PocketData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PocketData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1F78355E2719A08E008F2E4D /* PocketData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PocketData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1F78355F2719A08E008F2E4D /* CheckPoint+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckPoint+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1F7835602719A08E008F2E4D /* CheckPoint+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckPoint+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1F7835612719A08E008F2E4D /* HeroData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1F7835622719A08E008F2E4D /* HeroData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1F7835632719A08E008F2E4D /* ItemData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1F7835642719A08E008F2E4D /* ItemData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1F93BE6826EF886900490A1E /* LuckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckViewController.swift; sourceTree = "<group>"; };
+		1F94D47B270F29F700BB9439 /* mainStory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainStory.json; sourceTree = "<group>"; };
 		1FB2794B26DE605D00CA0103 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1FB7EC3C26D2571800D9C5E0 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		1FC66958271EE06D00DFF0EC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1FEF47F526E6730700DD54F2 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		1FF6EC0E27146AC800108053 /* PathButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathButton.swift; sourceTree = "<group>"; };
 		1FF86E0726AEA832005A68BE /* Shelton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shelton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF86E0A26AEA832005A68BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF86E0C26AEA832005A68BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +91,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F78356E2719A0B4008F2E4D /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F78355D2719A08E008F2E4D /* PocketData+CoreDataClass.swift */,
+				1F78355E2719A08E008F2E4D /* PocketData+CoreDataProperties.swift */,
+				1F78355F2719A08E008F2E4D /* CheckPoint+CoreDataClass.swift */,
+				1F7835602719A08E008F2E4D /* CheckPoint+CoreDataProperties.swift */,
+				1F7835612719A08E008F2E4D /* HeroData+CoreDataClass.swift */,
+				1F7835622719A08E008F2E4D /* HeroData+CoreDataProperties.swift */,
+				1F7835632719A08E008F2E4D /* ItemData+CoreDataClass.swift */,
+				1F7835642719A08E008F2E4D /* ItemData+CoreDataProperties.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		1FF86DFE26AEA832005A68BE = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +125,7 @@
 		1FF86E0926AEA832005A68BE /* Shelton */ = {
 			isa = PBXGroup;
 			children = (
-				1F3282EF26E8FFB300E687B4 /* testStory.json */,
+				1F94D47B270F29F700BB9439 /* mainStory.json */,
 				1FF86E0A26AEA832005A68BE /* AppDelegate.swift */,
 				1FF86E1326AEA834005A68BE /* Assets.xcassets */,
 				1FF86E2E26AEB4A9005A68BE /* Model */,
@@ -97,6 +134,7 @@
 				1FF86E0C26AEA832005A68BE /* SceneDelegate.swift */,
 				1FF86E1526AEA834005A68BE /* LaunchScreen.storyboard */,
 				1FF86E1826AEA834005A68BE /* Info.plist */,
+				1F0C4F582716E0A800198022 /* DataModel.xcdatamodeld */,
 			);
 			path = Shelton;
 			sourceTree = "<group>";
@@ -105,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				1FF86E1026AEA832005A68BE /* Main.storyboard */,
+				1FF6EC0E27146AC800108053 /* PathButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,16 +164,18 @@
 		1FF86E2E26AEB4A9005A68BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F78356E2719A0B4008F2E4D /* DataModel */,
 				1FF86E2C26AEB4A3005A68BE /* StoryBrain.swift */,
 				1FF86E2F26AEB78D005A68BE /* PathObject.swift */,
 				1F471BCD26AFFE62005C6528 /* NPC.swift */,
 				1F471BCF26B002A9005C6528 /* Hero.swift */,
 				1F44A27926D4F57000382E3F /* Pocket.swift */,
-				1F44A27B26D4F6CE00382E3F /* Item.swift */,
+				1F78355B27199640008F2E4D /* Item.swift */,
 				1F5A160926D63BA300B7F4E7 /* Battle.swift */,
 				1FB2794B26DE605D00CA0103 /* Constants.swift */,
 				1FEF47F526E6730700DD54F2 /* Skill.swift */,
 				1F614FF626EA08B0006734DE /* JSONManager.swift */,
+				1FC66958271EE06D00DFF0EC /* CoreDataStack.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,10 +237,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F94D47C270F29F700BB9439 /* mainStory.json in Resources */,
 				1FF86E1726AEA834005A68BE /* LaunchScreen.storyboard in Resources */,
 				1FF86E1426AEA834005A68BE /* Assets.xcassets in Resources */,
 				1FF86E1226AEA832005A68BE /* Main.storyboard in Resources */,
-				1F3282F026E8FFB300E687B4 /* testStory.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,15 +251,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F44A27C26D4F6CE00382E3F /* Item.swift in Sources */,
+				1F78356A2719A08E008F2E4D /* HeroData+CoreDataProperties.swift in Sources */,
+				1F0C4F5A2716E0A800198022 /* DataModel.xcdatamodeld in Sources */,
 				1F93BE6926EF886900490A1E /* LuckViewController.swift in Sources */,
 				1FF86E2D26AEB4A3005A68BE /* StoryBrain.swift in Sources */,
+				1F78356B2719A08E008F2E4D /* ItemData+CoreDataClass.swift in Sources */,
 				1FF86E3026AEB78D005A68BE /* PathObject.swift in Sources */,
+				1FF6EC0F27146AC800108053 /* PathButton.swift in Sources */,
+				1F78356C2719A08E008F2E4D /* ItemData+CoreDataProperties.swift in Sources */,
 				1F471BCE26AFFE62005C6528 /* NPC.swift in Sources */,
+				1F7835662719A08E008F2E4D /* PocketData+CoreDataProperties.swift in Sources */,
+				1F7835682719A08E008F2E4D /* CheckPoint+CoreDataProperties.swift in Sources */,
+				1F7835652719A08E008F2E4D /* PocketData+CoreDataClass.swift in Sources */,
 				1FF86E0F26AEA832005A68BE /* ViewController.swift in Sources */,
 				1F471BD026B002A9005C6528 /* Hero.swift in Sources */,
 				1FB7EC3D26D2571800D9C5E0 /* InventoryViewController.swift in Sources */,
+				1F7835692719A08E008F2E4D /* HeroData+CoreDataClass.swift in Sources */,
 				1F614FF726EA08B0006734DE /* JSONManager.swift in Sources */,
+				1F7835672719A08E008F2E4D /* CheckPoint+CoreDataClass.swift in Sources */,
 				1FEF47F626E6730700DD54F2 /* Skill.swift in Sources */,
 				1F67101D26F0D315002AAC86 /* StartViewController.swift in Sources */,
 				1FB2794C26DE605D00CA0103 /* Constants.swift in Sources */,
@@ -228,6 +278,8 @@
 				1FF86E0B26AEA832005A68BE /* AppDelegate.swift in Sources */,
 				1FF86E0D26AEA832005A68BE /* SceneDelegate.swift in Sources */,
 				1F5A160A26D63BA300B7F4E7 /* Battle.swift in Sources */,
+				1F78355C27199640008F2E4D /* Item.swift in Sources */,
+				1FC66959271EE06D00DFF0EC /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +483,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1F0C4F582716E0A800198022 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1F0C4F592716E0A800198022 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 1F0C4F592716E0A800198022 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1FF86DFF26AEA832005A68BE /* Project object */;
 }

@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import CoreData
 
-class Pocket: Hero {
+public class Pocket {
     static var gold: Int = 15
     static var food: Int = 1
     static var pocket: [Item] = []
@@ -31,7 +32,10 @@ class Pocket: Hero {
     }
     
     static func checkForItem(byId item: Int) -> Bool {
-        return true
+        if Pocket.pocket.contains(K.Items[item]) {
+            return true
+        }
+        return false
     }
     
     static func removeItem(item: Item) {

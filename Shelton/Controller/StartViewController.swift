@@ -6,13 +6,31 @@
 //
 
 import UIKit
+import CoreData
 
 class StartViewController: UIViewController {
+    
+    @IBOutlet weak var continueButton: UIButton!
+    
+    //connect to DataModel
+    lazy var coreDataStack = CoreDataStack(modelName: "DataModel")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "mainBackground"))
+        
+        //disable Continue button, if no data
+        let checkPoint: NSFetchRequest<CheckPoint> = CheckPoint.fetchRequest()
+        do {
+            let result = try coreDataStack.managedContext.fetch(checkPoint)
+            if result.isEmpty {
+                continueButton.isHidden = true
+            }
+        }
+        catch let error as NSError {
+            print("Fetching error - \(error), \(error.userInfo)")
+        }
+        
     }
     
 

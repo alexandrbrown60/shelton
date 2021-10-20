@@ -17,7 +17,7 @@ struct PathData: Codable {
     let status: HeroStatus?
     let battle: BattleInfo?
     let pocket: PocketInfo?
-    let luck: TryLuck?
+    let tryLuck: TryLuck?
     let inputSecret: InputSecret?
 }
 
