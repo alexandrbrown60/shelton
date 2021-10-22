@@ -84,8 +84,9 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
         story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: userChoice)
         
         scrollView.setContentOffset(.zero, animated: false)
-        
-        //update or delete checkpoint
+
+
+        //update checkpoint
         currentCheckPoint?.pathId = Int64(userChoice)!
         currentCheckPoint?.hero?.health = Int16(Hero.health)
         currentCheckPoint?.hero?.attackStrenght = Int16(Hero.attackStrenght)
@@ -102,6 +103,7 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
             }
         }
         coreDataStack.saveContext()
+        
     }
     
     //open arena view controller and send them current battle info
@@ -131,6 +133,13 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
     //input secret
     @objc func inputSecret(_ sender: UIButton!) {
         
+    }
+    
+    //end game
+    @objc func endGame(_ sender: UIButton!) {
+        coreDataStack.managedContext.delete(currentCheckPoint!)
+        coreDataStack.saveContext()
+        self.dismiss(animated: true, completion: nil)
     }
         
     

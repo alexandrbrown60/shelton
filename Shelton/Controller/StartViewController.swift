@@ -11,6 +11,7 @@ import CoreData
 class StartViewController: UIViewController {
     
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
     
     //connect to DataModel
     lazy var coreDataStack = CoreDataStack(modelName: "DataModel")
@@ -25,6 +26,9 @@ class StartViewController: UIViewController {
             let result = try coreDataStack.managedContext.fetch(checkPoint)
             if result.isEmpty {
                 continueButton.isHidden = true
+            }
+            else {
+                startButton.isHidden = true
             }
         }
         catch let error as NSError {

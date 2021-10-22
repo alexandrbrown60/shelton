@@ -114,6 +114,16 @@ struct StoryBrain {
           return nil
       }
     
+      //get event
+    func getEvent() -> String? {
+        if let event = jsonManager.getData(forPath: pathNumber)!.event {
+            if event.name == "theEnd" {
+                return event.name
+            }
+        }
+        return nil
+    }
+    
 
     //MARK: - Interract with UI
     
@@ -142,6 +152,9 @@ struct StoryBrain {
         if let secret = inputSecret() {
             self.currentSecret = secret.1
             delegate?.setTextField(placeholder: secret.0)
+        }
+        if let _ = getEvent() {
+            buttonsArray.insert(addEndGameButton(), at: 0)
         }
         return buttonsArray
     }
@@ -194,6 +207,13 @@ struct StoryBrain {
     }
     func getCurrentLuckTrying() -> (Int, Int) {
        return currentLuckTrying!
+    }
+    
+    //MARK: - End Game
+    func addEndGameButton() -> UIButton {
+        let button = PathButton(title: "Конец игры")
+        button.addTarget(self, action: #selector(ViewController.endGame), for: .touchUpInside)
+        return button
     }
 
 }

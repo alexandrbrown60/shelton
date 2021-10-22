@@ -19,6 +19,7 @@ struct PathData: Codable {
     let pocket: PocketInfo?
     let tryLuck: TryLuck?
     let inputSecret: InputSecret?
+    let event: Event?
 }
 
 struct PathButtons: Codable {
@@ -64,4 +65,9 @@ struct PocketInfo: Codable {
     let pick: Int?
     let drop: Int?
 }
+
+struct Event: Codable {
+    let name: String
+}
+
 

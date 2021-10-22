@@ -318,6 +318,7 @@
                     <navigationItem key="navigationItem" id="eEy-8R-R34"/>
                     <connections>
                         <outlet property="continueButton" destination="GOl-FK-Opv" id="E4J-Oc-GlH"/>
+                        <outlet property="startButton" destination="TED-KA-0DG" id="XOo-3w-78h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZx-gm-AUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
