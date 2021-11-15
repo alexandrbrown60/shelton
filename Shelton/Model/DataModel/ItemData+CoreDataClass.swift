@@ -2,7 +2,7 @@
 //  ItemData+CoreDataClass.swift
 //  Shelton
 //
-//  Created by Александр Иванов on 15.10.2021.
+//  Created by Александр Иванов on 02.11.2021.
 //
 //
 

@@ -25,7 +25,7 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    lazy var coreDataStack = CoreDataStack(modelName: "DataModel")
+    var coreDataStack: CoreDataStack!
     var currentCheckPoint: CheckPoint?
 
     var story = StoryBrain()
@@ -35,6 +35,9 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
         
         //check for checkpoint
         let checkPoint: NSFetchRequest<CheckPoint> = CheckPoint.fetchRequest()
+        checkPoint.predicate = NSPredicate(format: "pathId != nil")
+        checkPoint.fetchLimit = 1
+        
         do {
             let result = try coreDataStack.managedContext.fetch(checkPoint)
             if result.isEmpty {
@@ -45,24 +48,39 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
                     buttonStackView.addArrangedSubview(button)
                 
                 //and create checkpoint
-                currentCheckPoint = CheckPoint(context: coreDataStack.managedContext)
+                let entity = NSEntityDescription.entity(forEntityName: "CheckPoint", in: coreDataStack.managedContext)!
+                currentCheckPoint = CheckPoint(entity: entity, insertInto: coreDataStack.managedContext)
                 currentCheckPoint?.pathId = 0
-                let hero = HeroData(context: coreDataStack.managedContext)
-                let pocket = PocketData(context: coreDataStack.managedContext)
-                hero.attackStrenght = Int16(Hero.attackStrenght)
-                hero.health = Int16(Hero.health)
-                hero.maxHealth = Int16(Hero.maxHealth)
-                hero.luck = Int16(Hero.luck)
-                pocket.gold = 15
-                pocket.food = 2
+                currentCheckPoint?.attackStrenght = Int16(Hero.attackStrenght)
+                currentCheckPoint?.health = Int16(Hero.health)
+                currentCheckPoint?.maxHealth = Int16(Hero.maxHealth)
+                currentCheckPoint?.luck = Int16(Hero.luck)
+                currentCheckPoint?.gold = 15
+                currentCheckPoint?.food = 2
+                
                 
                 coreDataStack.saveContext()
             }
             else {
                 //load data
                 currentCheckPoint = result.first
-                if let pathId = currentCheckPoint?.pathId {
-                    story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: String(pathId))
+                if let checkPoint = currentCheckPoint {
+                    Hero.health = Int(checkPoint.health)
+                    Hero.luck = Int(checkPoint.luck)
+                    Hero.attackStrenght = Int(checkPoint.attackStrenght)
+                    Pocket.gold = Int(checkPoint.gold)
+                    Pocket.food = Int(checkPoint.food)
+                    
+                    //Пересмотреть код ниже
+                    if let items = checkPoint.items as? Set<ItemData> {
+                        for item in items {
+                            if Pocket.checkForItem(byName: item.name!) {
+                                Pocket.pickItem(item: Item(name: item.name!, action: Int(item.action)))
+                            }
+                        }
+                    }
+                    
+                    story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: String(checkPoint.pathId))
                 }
             }
         }
@@ -73,6 +91,45 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
         story.delegate = self
         
     }
+    
+    
+    func saveProgress() {
+        currentCheckPoint?.pathId = story.getPathNumber() + 1
+        currentCheckPoint?.health = Int16(Hero.health)
+        currentCheckPoint?.attackStrenght = Int16(Hero.attackStrenght)
+        currentCheckPoint?.luck = Int16(Hero.luck)
+        currentCheckPoint?.maxHealth = Int16(Hero.maxHealth)
+        currentCheckPoint?.gold = Int16(Pocket.gold)
+        currentCheckPoint?.food = Int16(Pocket.food)
+        
+        //Пересмотреть код ниже
+        if !Pocket.pocket.isEmpty {
+            guard let coreItems = currentCheckPoint?.items as? Set<ItemData> else { return }
+            
+            if !coreItems.isEmpty {
+                for coreItem in coreItems {
+                    for pocketItem in Pocket.pocket {
+                        if pocketItem.name != coreItem.name! {
+                            let newItem = ItemData(context: coreDataStack.managedContext)
+                            newItem.name = pocketItem.name
+                            newItem.action = Int16(pocketItem.action ?? 0)
+                            currentCheckPoint?.addToItems(newItem)
+                        }
+                    }
+                }
+            } else {
+                for pocketItem in Pocket.pocket {
+                    let newItem = ItemData(context: coreDataStack.managedContext)
+                    newItem.name = pocketItem.name
+                    newItem.action = Int16(pocketItem.action ?? 0)
+                    currentCheckPoint?.addToItems(newItem)
+                }
+            }
+            
+        }
+        
+        coreDataStack.saveContext()
+    }
 
     
     //MARK: - Button functions
@@ -82,27 +139,9 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
         let userChoice = sender.currentTitle!
         
         story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: userChoice)
+        saveProgress()
         
         scrollView.setContentOffset(.zero, animated: false)
-
-
-        //update checkpoint
-        currentCheckPoint?.pathId = Int64(userChoice)!
-        currentCheckPoint?.hero?.health = Int16(Hero.health)
-        currentCheckPoint?.hero?.attackStrenght = Int16(Hero.attackStrenght)
-        currentCheckPoint?.hero?.luck = Int16(Hero.luck)
-        currentCheckPoint?.hero?.maxHealth = Int16(Hero.maxHealth)
-        currentCheckPoint?.pocket?.gold = Int16(Pocket.gold)
-        currentCheckPoint?.pocket?.food = Int16(Pocket.food)
-        if !Pocket.pocket.isEmpty {
-            Pocket.pocket.forEach { pocketItem in
-                let item = ItemData(context: coreDataStack.managedContext)
-                item.name = pocketItem.name
-                item.action = Int16(pocketItem.action ?? 0)
-                currentCheckPoint?.pocket?.addToItems(item)
-            }
-        }
-        coreDataStack.saveContext()
         
     }
     
@@ -139,7 +178,9 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
     @objc func endGame(_ sender: UIButton!) {
         coreDataStack.managedContext.delete(currentCheckPoint!)
         coreDataStack.saveContext()
-        self.dismiss(animated: true, completion: nil)
+        Hero.rebuildHero()
+        Pocket.rebuildPocket()
+        self.navigationController?.popToRootViewController(animated: true)
     }
         
     

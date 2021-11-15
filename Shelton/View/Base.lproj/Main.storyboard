@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bhK-3P-scd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bhK-3P-scd">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -77,6 +77,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dvg-Mo-bkG">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="GZu-ln-Fpx"/>
                         <barButtonItem key="rightBarButtonItem" title="Инвентарь" id="TY6-mS-mdt">
                             <connections>
                                 <segue destination="C7g-Rt-rka" kind="show" identifier="Inventory" id="jBi-xa-ra2"/>
@@ -267,28 +268,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="32T-sR-PIl">
-                                <rect key="frame" x="162" y="311" width="90" height="106"/>
+                                <rect key="frame" x="178" y="311" width="58" height="68"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOl-FK-Opv">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
-                                        <state key="normal" title="Продолжить">
-                                            <color key="titleColor" name="TextColor"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="5Hb-Kc-q3X"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TED-KA-0DG">
-                                        <rect key="frame" x="0.0" y="38" width="90" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="58" height="30"/>
                                         <state key="normal" title="Начать">
                                             <color key="titleColor" name="TextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="vU3-Wb-wZC"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="goToStory" id="vU3-Wb-wZC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhN-yO-esa">
-                                        <rect key="frame" x="0.0" y="76" width="90" height="30"/>
+                                        <rect key="frame" x="0.0" y="38" width="58" height="30"/>
                                         <state key="normal" title="Об игре">
                                             <color key="titleColor" name="TextColor"/>
                                         </state>
@@ -315,9 +307,10 @@
                             <constraint firstItem="jMq-ZX-d1q" firstAttribute="centerX" secondItem="32T-sR-PIl" secondAttribute="centerX" id="sAr-P9-drq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="eEy-8R-R34"/>
+                    <navigationItem key="navigationItem" id="eEy-8R-R34">
+                        <barButtonItem key="backBarButtonItem" title="Меню" id="uzC-tS-IAl"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="continueButton" destination="GOl-FK-Opv" id="E4J-Oc-GlH"/>
                         <outlet property="startButton" destination="TED-KA-0DG" id="XOo-3w-78h"/>
                     </connections>
                 </viewController>
@@ -333,6 +326,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fj6-L8-dXR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="compactScrollEdgeAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -344,9 +338,6 @@
             <point key="canvasLocation" x="50.724637681159422" y="114.50892857142857"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="5Hb-Kc-q3X"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="die.face.1" catalog="system" width="128" height="114"/>
         <image name="die.face.2" catalog="system" width="128" height="114"/>

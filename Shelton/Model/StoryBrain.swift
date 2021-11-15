@@ -22,6 +22,11 @@ struct StoryBrain {
           let text = jsonManager.getData(forPath: pathNumber)!.text
           return text
       }
+    
+      //get current path number
+     func getPathNumber() -> Int64 {
+         return Int64(self.pathNumber)
+     }
       
       //get buttons
       func buttons() -> [(Int, Bool)]? {
@@ -117,8 +122,8 @@ struct StoryBrain {
       //get event
     func getEvent() -> String? {
         if let event = jsonManager.getData(forPath: pathNumber)!.event {
-            if event.name == "theEnd" {
-                return event.name
+            if event == "theEnd" {
+                return event
             }
         }
         return nil

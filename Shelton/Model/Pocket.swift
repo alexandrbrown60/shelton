@@ -38,10 +38,25 @@ public class Pocket {
         return false
     }
     
+    static func checkForItem(byName name: String) -> Bool {
+        for item in pocket {
+            if name == item.name {
+                return false
+            }
+        }
+        return true
+    }
+    
     static func removeItem(item: Item) {
         if let index = Pocket.pocket.firstIndex(of: item) {
             Pocket.pocket.remove(at: index)
         }
+    }
+    
+    static func rebuildPocket() {
+        gold = 15
+        food = 1
+        pocket = []
     }
     
 }

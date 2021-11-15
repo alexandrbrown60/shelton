@@ -10,7 +10,6 @@ import CoreData
 
 class StartViewController: UIViewController {
     
-    @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
     //connect to DataModel
@@ -23,18 +22,25 @@ class StartViewController: UIViewController {
         //disable Continue button, if no data
         let checkPoint: NSFetchRequest<CheckPoint> = CheckPoint.fetchRequest()
         do {
-            let result = try coreDataStack.managedContext.fetch(checkPoint)
-            if result.isEmpty {
-                continueButton.isHidden = true
+            let result = try coreDataStack.managedContext.count(for: checkPoint)
+            if result > 0 {
+                startButton.setTitle("Продолжить", for: .normal)
             }
             else {
-                startButton.isHidden = true
+                startButton.setTitle("Начать", for: .normal)
             }
         }
         catch let error as NSError {
             print("Fetching error - \(error), \(error.userInfo)")
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToStory" {
+            let storyVC = segue.destination as! ViewController
+            storyVC.coreDataStack = coreDataStack
+        }
     }
     
 

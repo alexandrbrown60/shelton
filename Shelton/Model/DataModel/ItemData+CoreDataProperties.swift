@@ -2,7 +2,7 @@
 //  ItemData+CoreDataProperties.swift
 //  Shelton
 //
-//  Created by Александр Иванов on 15.10.2021.
+//  Created by Александр Иванов on 02.11.2021.
 //
 //
 
@@ -16,9 +16,9 @@ extension ItemData {
         return NSFetchRequest<ItemData>(entityName: "ItemData")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var action: Int16
-    @NSManaged public var pocket: PocketData?
+    @NSManaged public var name: String?
+    @NSManaged public var checkPoint: CheckPoint?
 
 }
 

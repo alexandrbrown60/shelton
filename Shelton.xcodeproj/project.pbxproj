@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1F0C4F5A2716E0A800198022 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C4F582716E0A800198022 /* DataModel.xcdatamodeld */; };
+		1F0E7A3F27317DFB000830A1 /* CheckPoint+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0E7A3B27317DFB000830A1 /* CheckPoint+CoreDataClass.swift */; };
+		1F0E7A4027317DFB000830A1 /* CheckPoint+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0E7A3C27317DFB000830A1 /* CheckPoint+CoreDataProperties.swift */; };
+		1F0E7A4127317DFB000830A1 /* ItemData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0E7A3D27317DFB000830A1 /* ItemData+CoreDataClass.swift */; };
+		1F0E7A4227317DFB000830A1 /* ItemData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0E7A3E27317DFB000830A1 /* ItemData+CoreDataProperties.swift */; };
 		1F44A27A26D4F57000382E3F /* Pocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44A27926D4F57000382E3F /* Pocket.swift */; };
 		1F471BCE26AFFE62005C6528 /* NPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BCD26AFFE62005C6528 /* NPC.swift */; };
 		1F471BD026B002A9005C6528 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BCF26B002A9005C6528 /* Hero.swift */; };
@@ -17,14 +21,6 @@
 		1F67101D26F0D315002AAC86 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F67101C26F0D315002AAC86 /* StartViewController.swift */; };
 		1F67101F26F0D588002AAC86 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F67101E26F0D588002AAC86 /* AboutViewController.swift */; };
 		1F78355C27199640008F2E4D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78355B27199640008F2E4D /* Item.swift */; };
-		1F7835652719A08E008F2E4D /* PocketData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78355D2719A08E008F2E4D /* PocketData+CoreDataClass.swift */; };
-		1F7835662719A08E008F2E4D /* PocketData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78355E2719A08E008F2E4D /* PocketData+CoreDataProperties.swift */; };
-		1F7835672719A08E008F2E4D /* CheckPoint+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78355F2719A08E008F2E4D /* CheckPoint+CoreDataClass.swift */; };
-		1F7835682719A08E008F2E4D /* CheckPoint+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7835602719A08E008F2E4D /* CheckPoint+CoreDataProperties.swift */; };
-		1F7835692719A08E008F2E4D /* HeroData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7835612719A08E008F2E4D /* HeroData+CoreDataClass.swift */; };
-		1F78356A2719A08E008F2E4D /* HeroData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7835622719A08E008F2E4D /* HeroData+CoreDataProperties.swift */; };
-		1F78356B2719A08E008F2E4D /* ItemData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7835632719A08E008F2E4D /* ItemData+CoreDataClass.swift */; };
-		1F78356C2719A08E008F2E4D /* ItemData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7835642719A08E008F2E4D /* ItemData+CoreDataProperties.swift */; };
 		1F93BE6926EF886900490A1E /* LuckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F93BE6826EF886900490A1E /* LuckViewController.swift */; };
 		1F94D47C270F29F700BB9439 /* mainStory.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F94D47B270F29F700BB9439 /* mainStory.json */; };
 		1FB2794C26DE605D00CA0103 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2794B26DE605D00CA0103 /* Constants.swift */; };
@@ -44,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		1F0C4F592716E0A800198022 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		1F0E7A3B27317DFB000830A1 /* CheckPoint+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckPoint+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1F0E7A3C27317DFB000830A1 /* CheckPoint+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckPoint+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1F0E7A3D27317DFB000830A1 /* ItemData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1F0E7A3E27317DFB000830A1 /* ItemData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1F44A27926D4F57000382E3F /* Pocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pocket.swift; sourceTree = "<group>"; };
 		1F471BCD26AFFE62005C6528 /* NPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPC.swift; sourceTree = "<group>"; };
 		1F471BCF26B002A9005C6528 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
@@ -53,14 +53,6 @@
 		1F67101C26F0D315002AAC86 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		1F67101E26F0D588002AAC86 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		1F78355B27199640008F2E4D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		1F78355D2719A08E008F2E4D /* PocketData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PocketData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1F78355E2719A08E008F2E4D /* PocketData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PocketData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1F78355F2719A08E008F2E4D /* CheckPoint+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckPoint+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1F7835602719A08E008F2E4D /* CheckPoint+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckPoint+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1F7835612719A08E008F2E4D /* HeroData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1F7835622719A08E008F2E4D /* HeroData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1F7835632719A08E008F2E4D /* ItemData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1F7835642719A08E008F2E4D /* ItemData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1F93BE6826EF886900490A1E /* LuckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckViewController.swift; sourceTree = "<group>"; };
 		1F94D47B270F29F700BB9439 /* mainStory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainStory.json; sourceTree = "<group>"; };
 		1FB2794B26DE605D00CA0103 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -94,14 +86,10 @@
 		1F78356E2719A0B4008F2E4D /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				1F78355D2719A08E008F2E4D /* PocketData+CoreDataClass.swift */,
-				1F78355E2719A08E008F2E4D /* PocketData+CoreDataProperties.swift */,
-				1F78355F2719A08E008F2E4D /* CheckPoint+CoreDataClass.swift */,
-				1F7835602719A08E008F2E4D /* CheckPoint+CoreDataProperties.swift */,
-				1F7835612719A08E008F2E4D /* HeroData+CoreDataClass.swift */,
-				1F7835622719A08E008F2E4D /* HeroData+CoreDataProperties.swift */,
-				1F7835632719A08E008F2E4D /* ItemData+CoreDataClass.swift */,
-				1F7835642719A08E008F2E4D /* ItemData+CoreDataProperties.swift */,
+				1F0E7A3B27317DFB000830A1 /* CheckPoint+CoreDataClass.swift */,
+				1F0E7A3C27317DFB000830A1 /* CheckPoint+CoreDataProperties.swift */,
+				1F0E7A3E27317DFB000830A1 /* ItemData+CoreDataProperties.swift */,
+				1F0E7A3D27317DFB000830A1 /* ItemData+CoreDataClass.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -251,31 +239,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F78356A2719A08E008F2E4D /* HeroData+CoreDataProperties.swift in Sources */,
+				1F0E7A4227317DFB000830A1 /* ItemData+CoreDataProperties.swift in Sources */,
 				1F0C4F5A2716E0A800198022 /* DataModel.xcdatamodeld in Sources */,
 				1F93BE6926EF886900490A1E /* LuckViewController.swift in Sources */,
 				1FF86E2D26AEB4A3005A68BE /* StoryBrain.swift in Sources */,
-				1F78356B2719A08E008F2E4D /* ItemData+CoreDataClass.swift in Sources */,
 				1FF86E3026AEB78D005A68BE /* PathObject.swift in Sources */,
 				1FF6EC0F27146AC800108053 /* PathButton.swift in Sources */,
-				1F78356C2719A08E008F2E4D /* ItemData+CoreDataProperties.swift in Sources */,
 				1F471BCE26AFFE62005C6528 /* NPC.swift in Sources */,
-				1F7835662719A08E008F2E4D /* PocketData+CoreDataProperties.swift in Sources */,
-				1F7835682719A08E008F2E4D /* CheckPoint+CoreDataProperties.swift in Sources */,
-				1F7835652719A08E008F2E4D /* PocketData+CoreDataClass.swift in Sources */,
 				1FF86E0F26AEA832005A68BE /* ViewController.swift in Sources */,
 				1F471BD026B002A9005C6528 /* Hero.swift in Sources */,
 				1FB7EC3D26D2571800D9C5E0 /* InventoryViewController.swift in Sources */,
-				1F7835692719A08E008F2E4D /* HeroData+CoreDataClass.swift in Sources */,
+				1F0E7A4027317DFB000830A1 /* CheckPoint+CoreDataProperties.swift in Sources */,
 				1F614FF726EA08B0006734DE /* JSONManager.swift in Sources */,
-				1F7835672719A08E008F2E4D /* CheckPoint+CoreDataClass.swift in Sources */,
 				1FEF47F626E6730700DD54F2 /* Skill.swift in Sources */,
+				1F0E7A4127317DFB000830A1 /* ItemData+CoreDataClass.swift in Sources */,
 				1F67101D26F0D315002AAC86 /* StartViewController.swift in Sources */,
 				1FB2794C26DE605D00CA0103 /* Constants.swift in Sources */,
 				1F67101F26F0D588002AAC86 /* AboutViewController.swift in Sources */,
 				1F5A160626D6332400B7F4E7 /* ArenaViewController.swift in Sources */,
 				1F44A27A26D4F57000382E3F /* Pocket.swift in Sources */,
 				1FF86E0B26AEA832005A68BE /* AppDelegate.swift in Sources */,
+				1F0E7A3F27317DFB000830A1 /* CheckPoint+CoreDataClass.swift in Sources */,
 				1FF86E0D26AEA832005A68BE /* SceneDelegate.swift in Sources */,
 				1F5A160A26D63BA300B7F4E7 /* Battle.swift in Sources */,
 				1F78355C27199640008F2E4D /* Item.swift in Sources */,
@@ -360,6 +344,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Тайна капитана Шелтона";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -414,6 +399,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "Тайна капитана Шелтона";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
