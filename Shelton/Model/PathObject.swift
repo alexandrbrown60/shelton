@@ -20,6 +20,8 @@ struct PathData: Codable {
     let tryLuck: TryLuck?
     let inputSecret: InputSecret?
     let event: String?
+    let time: Int?
+    let image: String?
 }
 
 struct PathButtons: Codable {

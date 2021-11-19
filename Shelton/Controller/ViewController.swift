@@ -24,6 +24,7 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
     @IBOutlet weak var mainText: UILabel!
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var image: UIImageView!
     
     var coreDataStack: CoreDataStack!
     var currentCheckPoint: CheckPoint?
@@ -32,6 +33,8 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        image.isHidden = true
         
         //check for checkpoint
         let checkPoint: NSFetchRequest<CheckPoint> = CheckPoint.fetchRequest()
@@ -81,6 +84,7 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
                     }
                     
                     story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: String(checkPoint.pathId))
+                    setImage()
                 }
             }
         }
@@ -139,6 +143,7 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
         let userChoice = sender.currentTitle!
         
         story.nextPath(stackView: buttonStackView, mainText: mainText, userChoice: userChoice)
+        setImage()
         saveProgress()
         
         scrollView.setContentOffset(.zero, animated: false)
@@ -181,6 +186,17 @@ class ViewController: UIViewController, getDataFromArena, getLuckTryingResult, s
         Hero.rebuildHero()
         Pocket.rebuildPocket()
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    //set image
+    func setImage() {
+        if let image = story.currentImage {
+            self.image.isHidden = false
+            self.image.image = UIImage(named: image)
+        }
+        else {
+            self.image.isHidden = true
+        }
     }
         
     

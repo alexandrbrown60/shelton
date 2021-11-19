@@ -12,6 +12,7 @@ struct StoryBrain {
     var currentBattle: Battle?
     var currentLuckTrying: (Int, Int)?
     var currentSecret: Int?
+    var currentImage: String?
     let jsonManager = JSONManager(jsonFileName: "mainStory")
     var delegate: setInputSecret?
     
@@ -120,13 +121,26 @@ struct StoryBrain {
       }
     
       //get event
-    func getEvent() -> String? {
+      func getEvent() -> String? {
         if let event = jsonManager.getData(forPath: pathNumber)!.event {
             if event == "theEnd" {
                 return event
             }
         }
         return nil
+      }
+    
+      //get time
+    func checkTime() {
+        if let time = jsonManager.getData(forPath: pathNumber)!.time {
+            Pocket.time += time
+        }
+    }
+    
+    mutating func checkImage() {
+        if let image = jsonManager.getData(forPath: pathNumber)!.image {
+            self.currentImage = image
+        }
     }
     
 
@@ -169,24 +183,21 @@ struct StoryBrain {
         //delete previews buttons
         stackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
         
-        //checking status
-        checkStatus()
-        checkPocket()
-        
-        if userChoice == "1" {
-            self.pathNumber += 1
-            mainText.text = getText()
-        }
-        else {
-            self.pathNumber = Int(userChoice)! - 1
-            mainText.text = getText()
-        }
+        //go to path
+        self.pathNumber = Int(userChoice)!
+        mainText.text = getText()
         
         //add buttons and place it into stack view
         let buttons: [UIControl] = setButtons()
         buttons.forEach {
             stackView.addArrangedSubview($0)
         }
+        
+        //checking status
+        checkStatus()
+        checkPocket()
+        checkImage()
+        checkTime()
                 
     }
         

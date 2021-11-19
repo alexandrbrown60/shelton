@@ -12,6 +12,7 @@ public class Pocket {
     static var gold: Int = 15
     static var food: Int = 1
     static var pocket: [Item] = []
+    static var time: Int = 0
     
     static func pickItem(item: Item) {
         Pocket.pocket.append(item)
